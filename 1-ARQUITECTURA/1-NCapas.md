@@ -4,78 +4,113 @@
 
 <img width="1014" height="675" alt="image" src="https://github.com/user-attachments/assets/c52e1137-235a-4d1d-b6d3-487d657bcbca" />
 
+
+
 **Paso 2:** Seleccionar Crear una solucion en blanco y dar clic en Siguiente.
 
 <img width="1014" height="675" alt="image" src="https://github.com/user-attachments/assets/bea80627-b000-4bab-8459-9c7458d2cbcc" />
+
+
 
 **Paso 3:** Nombrar a la solucion en blanco y dar clic en Crear.
 ```
 SistemaElParaisal
 ```
+
 <img width="1014" height="675" alt="image" src="https://github.com/user-attachments/assets/f7689d7c-f4ad-4ecf-b842-86a21f3d4675" />
 
+
 **Resultado:**
+
 <img width="1413" height="925" alt="image" src="https://github.com/user-attachments/assets/f5df2633-085b-44c0-8597-335efd1beacc" />
+
+
 
 **Paso 4:** Dar clic derecho en la solucion y seleccionar **"Agregar > Nuevo proyecto"**. 
 
 <img width="1413" height="925" alt="image" src="https://github.com/user-attachments/assets/26b4ff0b-42b4-46e8-8dcd-a5c1aa704af0" />
 
+
+
 **Paso 5:** Seleccionar una **Biblioteca de clases (.NET)** y dar clic en Siguiente.
 
 <img width="1014" height="675" alt="image" src="https://github.com/user-attachments/assets/e5374519-1aeb-425e-837f-6ece6c84d4cd" />
+
 
 **Paso 6:** Nombrar a la **Biblioteca de clases (.NET)** y dar clic en Crear.
 ```
 SistemaElParaisal.EN
 ```
+
 <img width="1014" height="675" alt="image" src="https://github.com/user-attachments/assets/6686b773-a0d8-426f-b95c-7b7cac4ec035" />
 
+-
 <img width="1014" height="675" alt="image" src="https://github.com/user-attachments/assets/f1cc9b0f-3b22-4ac2-b0e0-ef45f951d60f" />
 
 
-**NOTA:** Eliminar el archivo Class1.cs siempre, solo aplicar para **Biblioteca de clases (.NET)**
+**NOTA:** Eliminar el archivo **Class1.cs** siempre, solo aplica para **Biblioteca de clases (.NET)**
 
-![image](https://github.com/user-attachments/assets/979b345e-670a-4b93-a154-2cec927a44c8)
 
-**Paso 7:** Crear como **Biblioteca de clases (.NET Framework)** las capas:
+<img width="1413" height="925" alt="image" src="https://github.com/user-attachments/assets/0d7ce0c3-abb6-4c37-9a51-1580023e05b9" />
+
+
+**Paso 7:** Crear como **Biblioteca de clases (.NET)** las capas:
 - SistemaElParaisal.DAL
 - SistemaElParaisal.BL
 
 **Resultado:**
-![image](https://github.com/user-attachments/assets/222880e5-db41-4416-b038-f99beeacd38c)
+<img width="1413" height="925" alt="image" src="https://github.com/user-attachments/assets/c448fb1f-fed6-49d6-aa97-43fc9721577a" />
+
 
 **Paso 8:** Dar clic derecho en la solucion y seleccionar **"Agregar > Nuevo proyecto"**. 
 
+<img width="1413" height="925" alt="image" src="https://github.com/user-attachments/assets/977435b0-d6d2-48cc-9909-8ee22cedc3b3" />
+
 **Paso 9:** Seleccionar un **Proyecto de prueba unitaria(.NET)** y dar clic en Siguiente.
 
-![image](https://github.com/user-attachments/assets/632f3e8a-4a1a-4858-9a35-52b13f015e02)
+<img width="1014" height="675" alt="image" src="https://github.com/user-attachments/assets/89b32314-15dc-42bd-be62-676525655a46" />
 
-**Paso 10:** Nombrar al **Proyecto de prueba unitaria(.NET )** y dar clic en Crear.
+
+**Paso 10:** Nombrar al **Proyecto de prueba unitaria "MSTest" (.NET )** y dar clic en Siguiente.
 ```
-SistemaElParaisal.PruebasUnitarias
+SistemaElParaisal.Pruebas
 ```
 
-![image](https://github.com/user-attachments/assets/2c2dcaca-d91e-4515-980c-f1f5b1d81468)
+<img width="1014" height="675" alt="image" src="https://github.com/user-attachments/assets/ff5c8724-c984-4898-ab7e-1b849dc82708" />
 
-**NOTA:** Eliminar el archivo UnitTest1.cs siempre, solo aplicar para **Proyecto de prueba unitaria(.NET)**
+-
+<img width="1014" height="675" alt="image" src="https://github.com/user-attachments/assets/68c7becf-5ba0-4e5a-b2b2-706b8cd24ff4" />
 
-![image](https://github.com/user-attachments/assets/0a83c273-5a3c-4ad9-b2fa-250f386186bd)
+
+**NOTA:** Eliminar el archivo Test1.cs siempre, solo aplica para **Proyecto de prueba unitaria "MSTest" (.NET)**
+
+<img width="1416" height="925" alt="image" src="https://github.com/user-attachments/assets/d20e1d0f-7b89-49b5-a9e9-8945958899a2" />
+
 
 **Resultado:**
-![image](https://github.com/user-attachments/assets/8257b780-509a-4374-86b3-c82fc698620a)
+<img width="1413" height="925" alt="image" src="https://github.com/user-attachments/assets/1a6c2a70-26b1-4264-bd0c-4eb5b985195c" />
+
 
 **Paso 11:** Dar clic derecho en la solucion y seleccionar **"Agregar > Nuevo proyecto"**. 
 
+<img width="1413" height="925" alt="image" src="https://github.com/user-attachments/assets/8e684553-f089-48c3-896c-abd82f52d174" />
+
 **Paso 12:** Agregar a la solucion un proyecto de tipo **"Aplicacion de Windows Forms (.NET)"**.
+
+<img width="1014" height="675" alt="image" src="https://github.com/user-attachments/assets/9561e54f-8427-4d7c-8dd0-32ba6e87f708" />
+
+**Paso 13:** Nombrar el proyecto de tipo **"Aplicacion de Windows Forms (.NET)"** y dar clic en Siguiente.
 ```
 SistemaElParaisal.UI.WinForms
 ```
 
-![image](https://github.com/user-attachments/assets/c2214f6a-4043-4fb7-b9e3-843172ae4fe4)
+<img width="1014" height="675" alt="image" src="https://github.com/user-attachments/assets/88d556e8-3b49-4581-8b80-0df50dfbd511" />
+
+<img width="1014" height="675" alt="image" src="https://github.com/user-attachments/assets/d18e2e3c-625a-44f3-9b83-2730d585ca57" />
 
 **Resultado:**
-![image](https://github.com/user-attachments/assets/752aedc5-750b-430a-868f-e9ceb24f85b6)
+<img width="1413" height="925" alt="image" src="https://github.com/user-attachments/assets/6a27b214-83b8-49c9-9432-ed02e8c311a5" />
+
 
 ## PARTE 2 - Configuracion de la arquitectura N-Capas del proyecto
 En este proyecto nos basaremos en la arquitectura de N-Capas en la cual creamos capas independientes con una unica funcion. Para la configuracion nos baseremos en el siguiente esquema:
@@ -138,148 +173,3 @@ En este proyecto nos basaremos en la arquitectura de N-Capas en la cual creamos 
 **Resultado:**
 ![image](https://github.com/user-attachments/assets/26c7a597-c8b0-432b-b692-e5676a03caff)
 
-## PARTE 3 - Configuracion de la comunDB
-Para poder obtener acceso a la base de datos utilizando esta arquitectura, sera necesario crear un archivo comun que contenga metodos para conectarse a una base de datos, crear consultas y obtener los resultados. A continuacion se creara y configurara la clase ComunDB.
-
-**Paso 1:** Ubicarse en la capa **"SistemaElParaisal.DAL"** y dar clic derecho y seleccionar **"Agregar > Clase"**.
-
-![image](https://github.com/user-attachments/assets/f264c7fb-195b-43c3-a03f-b42bc0abde14)
-
-**Paso 2:** Nombrar la clase **"ComunDB.cs"** y dar clic en **Agregar**.
-
-![image](https://github.com/user-attachments/assets/be894ec9-9052-4585-9a65-24d27b8a4a46)
-
-**Resultado:**
-![image](https://github.com/user-attachments/assets/bca62f75-e4eb-47f0-9ffe-179c33d9d37a)
-
-**Paso 3:** Establecer como **"public"** la clase **"ComunDB.cs"**
-
-![image](https://github.com/user-attachments/assets/626de071-5dae-4384-ac90-8169fc14fdc7)
-
-**Paso 4:** Agregar en la seccion de using las referencias a las bibliotecas de acceso a datos a utiizar.
-
-```csharp
-// Referencias
-using System.Data;
-using System.Data.SqlClient;
-```
-
-**Resultado:**
-![image](https://github.com/user-attachments/assets/aa89eeb0-edde-46c8-98e5-245eb2a35bf7)
-
-**Paso 5:** Agregar el String de conexion y metodos de acceso a datos.
-
-```csharp
-const string strConexion = @"Mi string de conexion aquí";
-
-private static SqlConnection ObtenerConexion()
-{
-    SqlConnection conexion = new SqlConnection(strConexion);
-    conexion.Open();
-    return conexion;
-}
-
-public static SqlCommand ObtenerComando()
-{
-    SqlCommand comando = new SqlCommand();
-    comando.Connection = ObtenerConexion();
-    return comando;
-}
-
-public static SqlCommand ObtenerComando(SqlTransaction pTransaction)
-{
-    // Sobre carga del metodo ObtenerComando para crear comandos de transaccion
-    SqlCommand comando = new SqlCommand();
-    comando.Connection = pTransaction.Connection;
-    comando.Transaction = pTransaction;
-    return comando;
-}
-
-public static int EjecutarComando(SqlCommand pComando)
-{
-    int resultado = pComando.ExecuteNonQuery();
-    pComando.Connection.Close();
-    return resultado;
-}
-
-public static SqlDataReader EjecutarComandoReader(SqlCommand pComando)
-{
-    SqlDataReader reader = pComando.ExecuteReader(CommandBehavior.CloseConnection);
-    return reader;
-}
-
-public static SqlTransaction CrearTransaction()
-{
-    SqlConnection conexion = ObtenerConexion();
-    return conexion.BeginTransaction();
-}
-```
-
-**Resultado:**
-![image](https://github.com/user-attachments/assets/154ca133-ce3c-4143-8e05-5b2a354a973d)
-
-### Configurar String de conexion
-Ver video: https://youtu.be/oct6MWqZhoE?si=cSlDKBCiX8MflLDY
-
-## Archivo **ComunDB.cs**
-```csharp
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-// Referencias
-using System.Data;
-using System.Data.SqlClient;
-
-namespace SistemaElParaisal.DAL
-{
-    public class ComunDB
-    {
-        const string strConexion = @"Mi string de conexion aquí";
-
-        private static SqlConnection ObtenerConexion()
-        {
-            SqlConnection conexion = new SqlConnection(strConexion);
-            conexion.Open();
-            return conexion;
-        }
-
-        public static SqlCommand ObtenerComando()
-        {
-            SqlCommand comando = new SqlCommand();
-            comando.Connection = ObtenerConexion();
-            return comando;
-        }
-
-        public static SqlCommand ObtenerComando(SqlTransaction pTransaction)
-        {
-            // Sobre carga del metodo ObtenerComando para crear comandos de transaccion
-            SqlCommand comando = new SqlCommand();
-            comando.Connection = pTransaction.Connection;
-            comando.Transaction = pTransaction;
-            return comando;
-        }
-
-        public static int EjecutarComando(SqlCommand pComando)
-        {
-            int resultado = pComando.ExecuteNonQuery();
-            pComando.Connection.Close();
-            return resultado;
-        }
-
-        public static SqlDataReader EjecutarComandoReader(SqlCommand pComando)
-        {
-            SqlDataReader reader = pComando.ExecuteReader(CommandBehavior.CloseConnection);
-            return reader;
-        }
-
-        public static SqlTransaction CrearTransaction()
-        {
-            SqlConnection conexion = ObtenerConexion();
-            return conexion.BeginTransaction();
-        }
-    }
-}
-
-```
