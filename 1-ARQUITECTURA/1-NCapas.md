@@ -112,7 +112,7 @@ SistemaElParaisal.UI.WinForms
 <img width="1413" height="925" alt="image" src="https://github.com/user-attachments/assets/6a27b214-83b8-49c9-9432-ed02e8c311a5" />
 
 
-## PARTE 2 - Configuracion de la arquitectura N-Capas del proyecto
+## PARTE 2 - Dependencias N-Capas del proyecto
 En este proyecto nos basaremos en la arquitectura de N-Capas en la cual creamos capas independientes con una unica funcion. Para la configuracion nos baseremos en el siguiente esquema:
 
 ![2023 G2_G5 - Desarrollo de CRUD en aplicación de Windows Forms](https://github.com/user-attachments/assets/0509b3e1-024f-4fe8-a8d8-aeb478db355a)
