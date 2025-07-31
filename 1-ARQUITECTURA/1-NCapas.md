@@ -137,41 +137,47 @@ En este proyecto nos basaremos en la arquitectura de N-Capas en la cual creamos 
 
 **Paso 4:** Ubicarse en la capa **"SistemaElParaisal.BL"** y en la opcion de **"Dependencias"** dar clic derecho y seleccionar **"> Agregar referencia"**.
 
-![image](https://github.com/user-attachments/assets/822a08e9-8937-4228-853a-54c94cd0f30e)
+<img width="1413" height="925" alt="image" src="https://github.com/user-attachments/assets/42a1909a-6e82-424e-bd28-29f5bfeb888a" />
+
 
 **Paso 5:** Ubicarse en la opcion **Proyectos > Solución** y marcar las opciones **"SistemaElParaisal.EN"**  y **"SistemaElParaisal.DAL"**,
 
 **Paso 6:** Revisar que quede marcada las opciones **"SistemaElParaisal.EN"**  y **"SistemaElParaisal.DAL"**, luego dar clic en **Aceptar**.
 
-![image](https://github.com/user-attachments/assets/363e99e3-60c3-46b8-b333-b71775b4942e)
-
+<img width="1413" height="922" alt="image" src="https://github.com/user-attachments/assets/9d22f7f3-b729-4a2b-a9c8-0eabb1067fa0" />
 
 **Resultado:**
-![image](https://github.com/user-attachments/assets/f535cf15-fad5-4e10-aaba-9fdec6a639b4)
+<img width="1413" height="925" alt="image" src="https://github.com/user-attachments/assets/909c11ec-4648-48d6-a069-8a2f2679b558" />
 
-**Paso 7:** Ubicarse en la capa **"SistemaElParaisal.PruebasUnitarias"** y en la opcion de **"Dependencias"** dar clic derecho y seleccionar **"> Agregar referencia"**.
 
-![image](https://github.com/user-attachments/assets/8fe5c5e8-933c-4371-be2b-2ef2ff6ae01a)
+**Paso 7:** Ubicarse en la capa **"SistemaElParaisal.Pruebas"** y en la opcion de **"Dependencias"** dar clic derecho y seleccionar **"> Agregar referencia"**.
+
+<img width="1413" height="925" alt="image" src="https://github.com/user-attachments/assets/671c8491-ab43-4c3d-981a-f11c863db1aa" />
+
 
 **Paso 8:** Ubicarse en la opcion **Proyectos > Solución** y marcar las opciones **"SistemaElParaisal.EN"**  y **"SistemaElParaisal.BL"**,
 
 **Paso 9:** Revisar que quede marcada las opciones **"SistemaElParaisal.EN"**  y **"SistemaElParaisal.BL"**, luego dar clic en **Aceptar**.
 
-![image](https://github.com/user-attachments/assets/c7a11c9b-f673-4d76-9a5d-dd0ba58ff69d)
+<img width="1410" height="923" alt="image" src="https://github.com/user-attachments/assets/ec70c98d-9d76-4228-ac40-a05872d9e528" />
+
 
 **Resultado:**
-![image](https://github.com/user-attachments/assets/2def6596-0a93-4295-ae88-767738c36c5e)
+<img width="1413" height="925" alt="image" src="https://github.com/user-attachments/assets/b1f07e9a-753f-4d01-aad8-ce9ade64e406" />
 
 **Paso 10:** Ubicarse en la capa **"SistemaElParaisal.UI.WinForms"** y en la opcion de **"Dependencias"** dar clic derecho y seleccionar **"> Agregar referencia"**.
 
-![image](https://github.com/user-attachments/assets/fcf7f924-cb18-4e0f-b9c0-d0378d5738e0)
+<img width="1413" height="925" alt="image" src="https://github.com/user-attachments/assets/873c917b-bedc-4ea1-852d-cd1f8de2160b" />
+
 
 **Paso 11:** Ubicarse en la opcion **Proyectos > Solución** y marcar las opciones **"SistemaElParaisal.EN"**  y **"SistemaElParaisal.BL"**,
 
 **Paso 12:** Revisar que quede marcada las opciones **"SistemaElParaisal.EN"**  y **"SistemaElParaisal.BL"**, luego dar clic en **Aceptar**.
 
-![image](https://github.com/user-attachments/assets/19c80196-e377-4857-ab5c-81769b798a33)
+<img width="1410" height="924" alt="image" src="https://github.com/user-attachments/assets/a918276a-1a91-48e4-b4cb-ee4786e93dad" />
+
 
 **Resultado:**
-![image](https://github.com/user-attachments/assets/26c7a597-c8b0-432b-b692-e5676a03caff)
+<img width="1413" height="925" alt="image" src="https://github.com/user-attachments/assets/c806c6e6-5124-4727-baf3-9f839cba63d2" />
+
 
