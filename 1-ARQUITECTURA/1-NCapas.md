@@ -118,22 +118,24 @@ En este proyecto nos basaremos en la arquitectura de N-Capas en la cual creamos 
 ![2023 G2_G5 - Desarrollo de CRUD en aplicación de Windows Forms](https://github.com/user-attachments/assets/0509b3e1-024f-4fe8-a8d8-aeb478db355a)
 
 
-**Paso 1:** Ubicarse en la capa **"SistemaElParaisal.DAL"** y en la opcion de **"Referencias"** dar clic derecho y seleccionar **"> Agregar referencia"**.
+**Paso 1:** Ubicarse en la capa **"SistemaElParaisal.DAL"** y en la opcion de **"Dependencias"** dar clic derecho y seleccionar **"> Agregar referencia"**.
 
-![image](https://github.com/user-attachments/assets/2cf46927-d789-44f8-ba98-86e0b29cd227)
+<img width="1413" height="925" alt="image" src="https://github.com/user-attachments/assets/468a640c-72fc-4e1a-b1e6-d6bd3b14a1d2" />
 
 **Paso 2:** Ubicarse en la opcion **Proyectos > Solución** y marcar la opcion **"SistemaElParaisal.EN"**.
 
-![image](https://github.com/user-attachments/assets/884568aa-ccc2-4628-b506-c57d303425c7)
+<img width="1407" height="923" alt="image" src="https://github.com/user-attachments/assets/e94cc35e-c5d3-44a3-a1f4-e0ac0eeff5be" />
+
 
 **Paso 3:** Revisar que quede marcada la opcion **"SistemaElParaisal.EN"** y dar clic en **Aceptar**.
 
-![image](https://github.com/user-attachments/assets/81866b3a-7dfa-4811-a1a8-39a29c4a340e)
+<img width="1408" height="923" alt="image" src="https://github.com/user-attachments/assets/511526f8-fd24-47bc-887b-857ddafe51fe" />
 
 **Resultado:**
-![image](https://github.com/user-attachments/assets/9a26324e-4522-468d-99a7-11c2801d694d)
+<img width="1413" height="925" alt="image" src="https://github.com/user-attachments/assets/7a9b54a6-1615-40fa-b384-85f9ab454dab" />
 
-**Paso 4:** Ubicarse en la capa **"SistemaElParaisal.BL"** y en la opcion de **"Referencias"** dar clic derecho y seleccionar **"> Agregar referencia"**.
+
+**Paso 4:** Ubicarse en la capa **"SistemaElParaisal.BL"** y en la opcion de **"Dependencias"** dar clic derecho y seleccionar **"> Agregar referencia"**.
 
 ![image](https://github.com/user-attachments/assets/822a08e9-8937-4228-853a-54c94cd0f30e)
 
@@ -147,7 +149,7 @@ En este proyecto nos basaremos en la arquitectura de N-Capas en la cual creamos 
 **Resultado:**
 ![image](https://github.com/user-attachments/assets/f535cf15-fad5-4e10-aaba-9fdec6a639b4)
 
-**Paso 7:** Ubicarse en la capa **"SistemaElParaisal.PruebasUnitarias"** y en la opcion de **"Referencias"** dar clic derecho y seleccionar **"> Agregar referencia"**.
+**Paso 7:** Ubicarse en la capa **"SistemaElParaisal.PruebasUnitarias"** y en la opcion de **"Dependencias"** dar clic derecho y seleccionar **"> Agregar referencia"**.
 
 ![image](https://github.com/user-attachments/assets/8fe5c5e8-933c-4371-be2b-2ef2ff6ae01a)
 
@@ -160,7 +162,7 @@ En este proyecto nos basaremos en la arquitectura de N-Capas en la cual creamos 
 **Resultado:**
 ![image](https://github.com/user-attachments/assets/2def6596-0a93-4295-ae88-767738c36c5e)
 
-**Paso 10:** Ubicarse en la capa **"SistemaElParaisal.UI.WinForms"** y en la opcion de **"Referencias"** dar clic derecho y seleccionar **"> Agregar referencia"**.
+**Paso 10:** Ubicarse en la capa **"SistemaElParaisal.UI.WinForms"** y en la opcion de **"Dependencias"** dar clic derecho y seleccionar **"> Agregar referencia"**.
 
 ![image](https://github.com/user-attachments/assets/fcf7f924-cb18-4e0f-b9c0-d0378d5738e0)
 
