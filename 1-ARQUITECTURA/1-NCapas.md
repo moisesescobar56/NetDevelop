@@ -181,3 +181,4 @@ En este proyecto nos basaremos en la arquitectura de N-Capas en la cual creamos 
 <img width="1413" height="925" alt="image" src="https://github.com/user-attachments/assets/c806c6e6-5124-4727-baf3-9f839cba63d2" />
 
 
+### ¡Felicitaciones! Has concluido la Lección 1
