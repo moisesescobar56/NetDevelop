@@ -10,39 +10,48 @@
 
 **NOTA:** Esta configuracion es necesaria para identificar quien modifica archivos en cualquier proyecto modificado en la computadora.
 
-## PARTE 3: Asociacion del proyecto de Visual Studio con Git (Azure Repos).
+## PARTE 1: Asociacion del proyecto de Visual Studio con Git (Azure Repos).
 **Paso 1:** Acceder al proyecto **SistemaElParaisal** en Azure DevOps.
 **Paso 2:** Acceder a la opcion **Repos > Files** del proyecto **SistemaElParaisal** en Azure DevOps.
 ![image](https://github.com/user-attachments/assets/3f08fbdf-e123-4e7e-875e-483bdba892ed)
 **Resultado:**
 ![image](https://github.com/user-attachments/assets/6bd7a241-237a-4b44-ac62-572cb5ff6ba5)
-**Paso 3:** Hasta el final de la pagina web, Configurar el **.gitignore** como **"Visual Studio"** y dar clic en **Initialize**..
-![image](https://github.com/user-attachments/assets/a7a9ed5f-615e-4372-b049-6e6d371b2eed)
-**Paso 5:** Dar clic en la opcion Clone.
-![image](https://github.com/user-attachments/assets/204b2e7c-c348-4679-b462-0207f6b2b297)
-**Paso 6:** Copiar la direccion HTTPS del repositorio.
-![image](https://github.com/user-attachments/assets/e39f5fdd-9af9-4040-a8a8-5e83dd7becce)
-### IMPORTANTE: REVISAR TENER ACCESO A INTERNET y GUARDA CAMBIOS EN VISUAL STUDIO.
-**Paso 7:** En Visual Studio dar clic derecho en la solucion y seleccionar **Crear respositorio de Git**.
-![image](https://github.com/user-attachments/assets/f1e952da-ce1e-44ab-9f74-82ce7084d806)
-![image](https://github.com/user-attachments/assets/ef72e194-5243-49c1-b380-32fd2ab230eb)
-**Paso 8:** Seleccionar la opcion, **Repositorio remoto existente**
-![image](https://github.com/user-attachments/assets/71a670c2-839a-4872-a037-e02e6ef38044)
-**Paso 9:** Dar clic en Crear y Enviar los Cambios
-![image](https://github.com/user-attachments/assets/006794cc-8465-45fd-8029-b031837e3d7c)
-**Paso 10:** Inicia sesion en Git Credential Manager con tu cuenta de Azure DevOps.
-![image](https://github.com/user-attachments/assets/a82b40d5-41e1-4ce3-b514-a7704fe9fd42)
-**Termina el inicio de sesion**
-![image](https://github.com/user-attachments/assets/c641bc4f-4b71-46a3-87aa-0d9090344927)
-**Paso 11:** Regresa al menu Repos de tu proyecto, ahora tendras 2 ramas, **main y master**. Por defecto Visual Studio sube los cambios en la rama master. 
-![image](https://github.com/user-attachments/assets/13670b58-f3cf-4c4a-9be6-696e3f28ab2c)
-**Paso 12:** Accede a la rama **master** y tendras los archivos del proyecto.
-![image](https://github.com/user-attachments/assets/a24d98d8-c279-42a4-880e-a9f0e196262f)
 
-## PARTE 4: Clonacion del proyecto desde Git.
+**Paso 4:** Copiar la direccion HTTPS del repositorio.
+<img width="1366" height="738" alt="image" src="https://github.com/user-attachments/assets/7f1cabb1-058a-49d3-8f2e-7d1e43a078ab" />
+
+### IMPORTANTE: *REVISAR TENER ACCESO A INTERNET y GUARDA CAMBIOS EN VISUAL STUDIO.*
+**Paso 7:** En Visual Studio dar clic derecho en la solucion y seleccionar **Crear respositorio de Git**.
+<img width="1413" height="925" alt="image" src="https://github.com/user-attachments/assets/36195915-e6c0-4a7f-a2d3-5237d9b0b6d0" />
+
+**Paso 8:** Seleccionar la opcion, **Repositorio remoto existente** y pegar la Url copiada anteriormente.
+<img width="1410" height="929" alt="image" src="https://github.com/user-attachments/assets/f20722aa-ba2d-4901-89eb-14cc54dadcf1" />
+
+**Paso 9:** Dar clic en **Crear y Enviar los Cambios**.
+
+<img width="1410" height="922" alt="image" src="https://github.com/user-attachments/assets/015df35d-4251-4cde-82f5-346d5b1eb508" />
+
+**Paso 10:** Inicia sesion en Git Credential Manager con tu cuenta de Azure DevOps.
+<img width="1413" height="982" alt="image" src="https://github.com/user-attachments/assets/7c078a21-d420-4086-88cf-a6b073e370a2" />
+
+<img width="1413" height="925" alt="image" src="https://github.com/user-attachments/assets/6cc48f05-55ae-49c9-bd74-df19a8508a68" />
+
+**Termina el inicio de sesion**
+
+<img width="1413" height="925" alt="image" src="https://github.com/user-attachments/assets/887072de-8a4a-4b63-90b5-ac876b6a4f0d" />
+
+**Resultado**
+<img width="1413" height="925" alt="image" src="https://github.com/user-attachments/assets/af0f475a-4bba-4e3c-9411-35473c1e6f77" />
+
+
+**Paso 11:** Regresa al menu Repos de tu proyecto, ahora tendras 1 rama **main**. 
+<img width="1559" height="869" alt="image" src="https://github.com/user-attachments/assets/267aa6b8-4cb4-4c2f-9eae-dfcb5b274886" />
+
+
+## PARTE 2: Clonacion del proyecto desde Git.
 **IMPORTANTE:** Este paso no aplica para el miembro del equipo que creo el proyecto y lo subio al repositorio de Azure DevOps.
 
-**Paso 1:** Abrir en el navegador el proyecto de Azure DevOps, dirigirse a **Repos > Files** en la rama **master**.
+**Paso 1:** Abrir en el navegador el proyecto de Azure DevOps, dirigirse a **Repos > Files** en la rama **main**.
 ![image](https://github.com/user-attachments/assets/58e37d80-921f-4645-b6a5-74bbd18eb9dc)
 **Paso 2:** Dar clic en la opcion Clone.
 ![image](https://github.com/user-attachments/assets/16f4ea39-4383-42c2-9043-6875c1126864)
