@@ -52,26 +52,32 @@
 **IMPORTANTE:** Este paso no aplica para el miembro del equipo que creo el proyecto y lo subio al repositorio de Azure DevOps.
 
 **Paso 1:** Abrir en el navegador el proyecto de Azure DevOps, dirigirse a **Repos > Files** en la rama **main**.
-![image](https://github.com/user-attachments/assets/58e37d80-921f-4645-b6a5-74bbd18eb9dc)
+<img width="1561" height="869" alt="image" src="https://github.com/user-attachments/assets/58cfb6e3-a5a0-4106-820e-fe8680850cfd" />
+
 **Paso 2:** Dar clic en la opcion Clone.
-![image](https://github.com/user-attachments/assets/16f4ea39-4383-42c2-9043-6875c1126864)
+<img width="1559" height="869" alt="image" src="https://github.com/user-attachments/assets/ee9ff8cf-0483-4a6b-ac9d-6b344938e864" />
+
 **Paso 3:** Copiar la direccion HTTPS del repositorio.
-![image](https://github.com/user-attachments/assets/4f24f3ff-e0c4-4ccf-9474-91322cf80e46)
+
+<img width="1559" height="869" alt="image" src="https://github.com/user-attachments/assets/c7888550-d90d-4597-9e46-2d4653e6dc95" />
+
 **Paso 4:** Abrir Visual Studio y seleccionar Clonar un repositorio.
-![image](https://github.com/user-attachments/assets/32abb7af-369b-4116-bc44-d65d16e0f09a)
+<img width="1014" height="675" alt="image" src="https://github.com/user-attachments/assets/47376df5-91d2-4728-b841-c7a5ad180d24" />
+
 **Resultado:**
-![image](https://github.com/user-attachments/assets/c8d320b3-d719-4507-8d3c-6a5f7739b344)
+<img width="1014" height="675" alt="image" src="https://github.com/user-attachments/assets/5cf9e88e-26c1-4ba0-a877-f5cc0efd90f5" />
+
 **Paso 5:** Pegar la direccion HTTPS del repositorio y dar clic en Clonar.
-![image](https://github.com/user-attachments/assets/508f9055-f72e-42b5-a377-74bee6fe4f23)
-**Resultado:** No apareceran los archivos del proyecto, porque si nos fijamos en la esquina inferior derecha, estamos en la rama **main**
-![image](https://github.com/user-attachments/assets/e7789ab7-930d-4216-8980-d88ebcaee57b)
-**Paso 6:** Dar clic en la rama **main**
-![image](https://github.com/user-attachments/assets/0258dada-f392-412d-bbe2-f1ad2c0affd3)
-**Paso 7:** Dar clic en Remotos y seleccionar la rama **master**
-![image](https://github.com/user-attachments/assets/882dad27-ca61-4e86-9de1-cdf5349efa3f)
-**Resultado:** Ya aparecen los archivos de nuestro proyecto.
-![image](https://github.com/user-attachments/assets/8816a678-36e2-4d77-b358-c67a75cad37e)
-**Paso 8:** Dar doble clic sobre la **solucion** para abrir el proyecto. 
-![image](https://github.com/user-attachments/assets/ab9ea0e9-88de-4072-a94c-9e30e7401e40)
-**Resultado:**
-![image](https://github.com/user-attachments/assets/3c755ad9-da18-4e98-b585-2c229648e7f3)
+
+<img width="1014" height="675" alt="image" src="https://github.com/user-attachments/assets/54b0ab04-0102-42f4-9b25-af8fcc429c3b" />
+
+### NOTA: Iniciar sesion si es necesiario.
+
+
+**Resultado:** No apareceran los archivos del proyecto, nos fijamos en la esquina inferior derecha, estamos en la rama **main** en el menu de **Cambios de GIT**.
+<img width="1413" height="925" alt="image" src="https://github.com/user-attachments/assets/746a5850-9ccd-4109-88c4-616824dcac31" />
+
+**Paso 6:** Damos clic en **Explorador de soluciones** , ya aparecen los archivos de nuestro proyecto.
+<img width="1413" height="925" alt="image" src="https://github.com/user-attachments/assets/da1a6b07-bded-4a96-a4a9-c509aec7c93e" />
+
+### ¡Felicitaciones! Has concluido la Lección 2
