@@ -78,6 +78,7 @@
 <img width="1413" height="925" alt="image" src="https://github.com/user-attachments/assets/746a5850-9ccd-4109-88c4-616824dcac31" />
 
 **Paso 6:** Damos clic en **Explorador de soluciones** , ya aparecen los archivos de nuestro proyecto.
-<img width="1413" height="925" alt="image" src="https://github.com/user-attachments/assets/da1a6b07-bded-4a96-a4a9-c509aec7c93e" />
+<img width="1413" height="925" alt="image" src="https://github.com/user-attachments/assets/fe89e2c8-fd18-4ab4-b036-354e85a132e7" />
+
 
 ### ¡Felicitaciones! Has concluido la Lección 2
