@@ -18,11 +18,13 @@ Es importante respetar el orden de creacion del diagrama de clases. Para el ejem
 
 **Paso 1:** Ubicarse en la capa **"SistemaElParaisal.EN"** y dar clic derecho y seleccionar **"Agregar > Clase"**.
 
-![image](https://github.com/user-attachments/assets/1c265857-26c3-483d-ac8a-e728617f1b10)
+<img width="1413" height="925" alt="image" src="https://github.com/user-attachments/assets/6188006a-483d-4843-9ba3-3b90e78d749f" />
+
 
 **Paso 2:** Nombrar la clase **"Cargo.cs"** y dar clic en **Agregar**.
 
-![image](https://github.com/user-attachments/assets/a169492f-7af3-48b6-a0fc-9aa90b28d1c2)
+<img width="1410" height="925" alt="image" src="https://github.com/user-attachments/assets/950fedbf-d0d4-4d6b-97f7-e976ad40ba89" />
+
 
 **Paso 3:** Establecer como **"public"** la clase **"Cargo.cs"** y **Guardar** los cambios.
 
@@ -34,23 +36,26 @@ Es importante respetar el orden de creacion del diagrama de clases. Para el ejem
 
 ```csharp
 public byte IdCargo { get; set; }  
-public string Nombre { get; set; }
+public string Nombre { get; set; } = string.Empty;
 ```
 
 **Resultado:**
-![image](https://github.com/user-attachments/assets/dd218686-a067-4863-b735-33619d466793)
+<img width="1413" height="925" alt="image" src="https://github.com/user-attachments/assets/fb98e571-7e38-4100-b019-1b0742c6a8f8" />
+
 
 **Paso 5:** Ubicarse en la capa **"SistemaElParaisal.EN"** y dar clic derecho y seleccionar **"Agregar > Clase"**.
 
-![image](https://github.com/user-attachments/assets/1c265857-26c3-483d-ac8a-e728617f1b10)
+<img width="1413" height="925" alt="image" src="https://github.com/user-attachments/assets/bd01027b-3e57-4c20-833d-cc1695f017aa" />
+
 
 **Paso 6:** Nombrar la clase **"Empleado.cs"** y dar clic en **Agregar**.
 
-![image](https://github.com/user-attachments/assets/05d60d10-1486-4095-ad97-8c7ef732c560)
+<img width="1409" height="920" alt="image" src="https://github.com/user-attachments/assets/cc0fbdd0-50c8-4dea-ae4c-612e440408ff" />
+
 
 **Paso 7:** Establecer como **"public"** la clase **"Empleado.cs"** y **Guardar** los cambios.
 
-![image](https://github.com/user-attachments/assets/a7abd1fc-269d-4c32-91ca-ab9634e23bef)
+<img width="1413" height="925" alt="image" src="https://github.com/user-attachments/assets/eea02dbb-6ab7-47fb-8570-85cc0d0feed6" />
 
 **Paso 8:** Codificar las propiedades de **Empleado** segun el diagrama de clases y **Guardar** los cambios.
 
@@ -59,17 +64,18 @@ public string Nombre { get; set; }
 ```csharp
 public short IdEmpleado { get; set; }
 public short IdCargo { get; set; } // FK
-public string Nombre { get; set; }
-public string Apellido { get; set; }
-public string Telefono { get; set; }
-public string Clave { get; set; }
+public string Nombre { get; set; } = string.Empty;
+public string Apellido { get; set; } = string.Empty;
+public string Telefono { get; set; } = string.Empty;
+public string Clave { get; set; } = string.Empty;
 
 // Propiedades virtuales para llaves foraneas (FK) para representar la Asociacion
-public virtual Cargo Cargo { get; set; }   
+public virtual Cargo Cargo { get; set; } = new Cargo(); 
 ```
 
 **Resultado:**
-![image](https://github.com/user-attachments/assets/dfc132ed-b795-4909-b922-4b15dca3e41b)
+<img width="1413" height="925" alt="image" src="https://github.com/user-attachments/assets/81d037d1-8012-4040-b47f-6324cd772d26" />
+
 
 ### **NOTA:** Al iniciar un proyecto es recomendable crear primero los archivos con accesibilidad publica y luego codificarlos. 
 
@@ -86,7 +92,7 @@ namespace SistemaElParaisal.EN
     public class Cargo
     {
         public byte IdCargo { get; set; }
-        public string Nombre { get; set; }
+        public string Nombre { get; set; } = string.Empty;
     }
 }
 ```
@@ -104,14 +110,14 @@ namespace SistemaElParaisal.EN
     public class Empleado
     {
         public short IdEmpleado { get; set; }
-        public byte IdCargo { get; set; } // FK
-        public string Nombre { get; set; }
-        public string Apellido { get; set; }
-        public string Telefono { get; set; }
-        public string Clave { get; set; }
+        public short IdCargo { get; set; } // FK
+        public string Nombre { get; set; } = string.Empty;
+        public string Apellido { get; set; } = string.Empty;
+        public string Telefono { get; set; } = string.Empty;
+        public string Clave { get; set; } = string.Empty;
 
         // Propiedades virtuales para llaves foraneas (FK) para representar la Asociacion
-        public virtual Cargo Cargo { get; set; }
+        public virtual Cargo Cargo { get; set; } = new Cargo();
     }
 }
 ```
