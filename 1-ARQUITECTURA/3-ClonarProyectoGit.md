@@ -1,4 +1,4 @@
-# Clonar repositorios en Visual Studio
+# CLONAR REPOSITORIO GIT EN VISUAL STUDIO
 ## CONFIGURACION DE GIT EN VS: Aplica para todos los miembros del equipo. 
 **Paso 1:** En Visual Studio acceder al menu de **Herramientas > Opciones**
 
