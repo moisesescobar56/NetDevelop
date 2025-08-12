@@ -15,46 +15,6 @@ Es importante respetar el orden de creacion del diagrama de clases. Para el ejem
 
 **IMPORTANTE:** se recomienda primero crear los archivos de clases, establecerlas como **"public"** y luego codificarlas.
 
-## PARTE 3 - Metodos CargoBL
-**Paso 1:** Ubicarse en la capa **"SistemaElParaisal.BL"** y dar clic derecho y seleccionar **"Agregar > Clase"**.
-
-![image](https://github.com/user-attachments/assets/1c265857-26c3-483d-ac8a-e728617f1b10)
-
-**Paso 2:** Nombrar la clase **"CargoBL.cs"** y dar clic en **Agregar**.
-
-![image](https://github.com/user-attachments/assets/0ba0e329-a32a-46e6-8e43-4b5fd5dab681)
-
-**Paso 3:** Establecer como **"public"** la clase **"CargoBL.cs"** y **Guardar** los cambios.
-
-![image](https://github.com/user-attachments/assets/2283fed5-cb8f-4fef-a0c6-04a21bd46a9f)
-
-**Paso 4:** Agregar en la seccion de using las referencias a las bibliotecas del proyecto a utilizar.
-
-```csharp
-// Referencias del proyecto
-using SistemaElParaisal.EN;
-using SistemaElParaisal.DAL;
-```
-**Resultado:**
-![image](https://github.com/user-attachments/assets/33095c68-2fca-46d5-b002-a29092106eac)
-
-**Paso 4:** Codificar los metodos intermediarios de **CargoBL** segun el diagrama de clases y **Guardar** los cambios.
-
-![image](https://github.com/user-attachments/assets/4ee01977-4ec0-4b54-aa1d-5298ad77d3d6)
-
-```csharp
-public Cargo ObtenerPorId(byte pIdCargo)
-{
-    return CargoDAL.ObtenerPorId(pIdCargo);
-}
-public List<Cargo> Buscar(Cargo pCargo)
-{
-    return CargoDAL.Buscar(pCargo);
-}
-```
-
-**Resultado:**
-![image](https://github.com/user-attachments/assets/033dbeaa-c627-4c11-8a35-6da5ef22e600)
 
 ## PARTE 3 - Metodos EmpleadoBL
 **Paso 1:** Ubicarse en la capa **"SistemaElParaisal.BL"** y dar clic derecho y seleccionar **"Agregar > Clase"**.
@@ -126,6 +86,47 @@ public List<Empleado> Buscar(Empleado pEmpleado)
 
 **Resultado:**
 ![image](https://github.com/user-attachments/assets/89f5c14f-a1b8-45e6-8a87-962c7ad3d4cb)
+
+## PARTE 4 - Metodos CargoBL
+**Paso 1:** Ubicarse en la capa **"SistemaElParaisal.BL"** y dar clic derecho y seleccionar **"Agregar > Clase"**.
+
+![image](https://github.com/user-attachments/assets/1c265857-26c3-483d-ac8a-e728617f1b10)
+
+**Paso 2:** Nombrar la clase **"CargoBL.cs"** y dar clic en **Agregar**.
+
+![image](https://github.com/user-attachments/assets/0ba0e329-a32a-46e6-8e43-4b5fd5dab681)
+
+**Paso 3:** Establecer como **"public"** la clase **"CargoBL.cs"** y **Guardar** los cambios.
+
+![image](https://github.com/user-attachments/assets/2283fed5-cb8f-4fef-a0c6-04a21bd46a9f)
+
+**Paso 4:** Agregar en la seccion de using las referencias a las bibliotecas del proyecto a utilizar.
+
+```csharp
+// Referencias del proyecto
+using SistemaElParaisal.EN;
+using SistemaElParaisal.DAL;
+```
+**Resultado:**
+![image](https://github.com/user-attachments/assets/33095c68-2fca-46d5-b002-a29092106eac)
+
+**Paso 4:** Codificar los metodos intermediarios de **CargoBL** segun el diagrama de clases y **Guardar** los cambios.
+
+![image](https://github.com/user-attachments/assets/4ee01977-4ec0-4b54-aa1d-5298ad77d3d6)
+
+```csharp
+public Cargo ObtenerPorId(byte pIdCargo)
+{
+    return CargoDAL.ObtenerPorId(pIdCargo);
+}
+public List<Cargo> Buscar(Cargo pCargo)
+{
+    return CargoDAL.Buscar(pCargo);
+}
+```
+
+**Resultado:**
+![image](https://github.com/user-attachments/assets/033dbeaa-c627-4c11-8a35-6da5ef22e600)
 
 ### **NOTA:** Al iniciar un proyecto es recomendable crear primero los archivos con accesibilidad publica y luego codificarlos. 
 
