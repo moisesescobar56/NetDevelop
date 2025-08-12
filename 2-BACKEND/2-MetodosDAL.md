@@ -15,124 +15,7 @@ Es importante respetar el orden de creacion del diagrama de clases. Para el ejem
 
 **IMPORTANTE:** se recomienda primero crear los archivos de clases, establecerlas como **"public"** y luego codificarlas.
 
-## PARTE 3 - Metodos CargoDAL
-**Paso 1:** Ubicarse en la capa **"SistemaElParaisal.DAL"** y dar clic derecho y seleccionar **"Agregar > Clase"**.
-
-![image](https://github.com/user-attachments/assets/830112ac-8266-4320-ad40-8fb331927f60)
-
-**Paso 2:** Nombrar la clase **"CargoDAL.cs"** y dar clic en **Agregar**.
-
-![image](https://github.com/user-attachments/assets/e7378ac6-1fa9-49c9-bb5c-a2caa3af6612)
-
-**Paso 3:** Establecer como **"public"** la clase **"CargoDAL.cs"** y **Guardar** los cambios.
-
-![image](https://github.com/user-attachments/assets/737a1774-15fd-4304-ac36-688c7cbeb770)
-
-**Paso 4:** Agregar en la seccion de using las referencias a las bibliotecas de acceso a datos a utiizar.
-
-```csharp
-// Referencias
-using System.Data;
-using System.Data.SqlClient;
-// Referencias del proyecto
-using SistemaElParaisal.EN;
-```
-**Resultado:**
-![image](https://github.com/user-attachments/assets/b06c088c-28c1-45ec-92ad-7ac885493520)
-
-**Paso 5:** Identificar los metodos de **CargoDAL** segun el diagrama de clases y **Guardar** los cambios.
-
-![image](https://github.com/user-attachments/assets/4ee01977-4ec0-4b54-aa1d-5298ad77d3d6)
-
-**Paso 6:** Codificar el metodo **"ObtenerPorId"** en **CargoDAL** y **Guardar** los cambios.
-
-```csharp
-#region Metodos de Busqueda
-public static Cargo ObtenerPorId(byte pIdCargo)
-{
-    Cargo obj = new Cargo();
-
-    SqlCommand comando = ComunDB.ObtenerComando();
-    comando.CommandType = CommandType.StoredProcedure;
-    comando.CommandText = "SP_ObtenerCargoPorId";
-    comando.Parameters.AddWithValue("@IdCargo", pIdCargo);
-
-    SqlDataReader reader = ComunDB.EjecutarComandoReader(comando);
-    while (reader.Read())
-    {
-        // Orden de las columnas depende de la Consulta SELECT utilizada
-        obj.IdCargo = reader.GetByte(0); // Columna [0] cero
-        obj.Nombre = reader.GetString(1);  // Columna [1] uno
-    }
-    return obj;
-}
-#endregion
-```
-**NOTA:** Los parametros deben ir en el mismo orden y con el mismo nombre del procedimiento almacenado en el gestor de SQL Server.
-
-![image](https://github.com/user-attachments/assets/f45422b8-a289-48f6-8dc5-64b2f57ae903)
-
-**Resultado:**
-![image](https://github.com/user-attachments/assets/f66983b5-f02d-4f29-aec4-0087988475e6)
-
-- **SqlCommand:** clase que permite crear un objeto para enviar una consulta SQL a la base de datos establecida.
-- **CommandType** propiedad que permite establecer el tipo de consulta SQL a ejecutar ***Text*** o ***StoredProcedure*** 
-- **Parameters.AddWithValue:** metodo que permite agregar los parametros dentro de la consulta SQL.
-- **SqlDataReader:** clase que permite crear un objeto para ejecutar una consulta SQL de tipo SELECT y leer el resultado.
-- **GetByte:** metodo para leer un dato de tipo byte (tinyint)
-- **GetString:** metodo para leer un dato de tipo string (varchar)
-
-**Paso 6:** Codificar el metodo **"Buscar"** en **CargoDAL** y **Guardar** los cambios.
-
-```csharp
-public static List<Cargo> Buscar(Cargo pCargo)
-{
-    List<Cargo> lista = new List<Cargo>();
-
-    #region Proceso
-    using (SqlCommand comando = ComunDB.ObtenerComando())
-    {
-        byte contador = 0;
-        string whereSQL = " ";
-        string consulta = @"SELECT TOP 100 c.IdCargo, c.Nombre
-                            FROM Cargo c ";
-
-        // Validar filtros
-        if (pCargo.Nombre != null && pCargo.Nombre.Trim() != string.Empty)
-        {
-            if (contador > 0)
-                whereSQL += " AND ";
-            contador += 1;
-            whereSQL += " c.Nombre LIKE @Nombre ";
-            comando.Parameters.AddWithValue("@Nombre", "%" + pCargo.Nombre + "%");
-        }
-        // Agregar filtros
-        if (whereSQL.Trim().Length > 0)
-        {
-            whereSQL = " WHERE " + whereSQL;
-        }
-        comando.CommandText = consulta + whereSQL;
-
-        SqlDataReader reader = ComunDB.EjecutarComandoReader(comando);
-        while (reader.Read())
-        {
-            Cargo obj = new Cargo();
-            // Orden de las columnas depende de la Consulta SELECT utilizada
-            obj.IdCargo = reader.GetByte(0);
-            obj.Nombre = reader.GetString(1);
-            lista.Add(obj);
-        }
-        comando.Connection.Dispose();
-    }
-    #endregion
-    return lista;
-}
-```
-
-**Resultado:**
-![image](https://github.com/user-attachments/assets/17ccda30-698c-4a99-898d-d0effd3ac7e0)
-
-## PARTE 4 - Metodos EmpleadoDAL
+## PARTE 3 - Metodos EmpleadoDAL
 **Paso 1:** Ubicarse en la capa **"SistemaElParaisal.DAL"** y dar clic derecho y seleccionar **"Agregar > Clase"**.
 
 ![image](https://github.com/user-attachments/assets/830112ac-8266-4320-ad40-8fb331927f60)
@@ -338,9 +221,126 @@ public static List<Empleado> Buscar(Empleado pEmpleado)
 }
 ```
 **Resultado:**
-![image](https://github.com/user-attachments/assets/f5522209-3cb9-45d3-94f1-2a52c96e455a)
+![image](https://github.com/user-attachments/assets/f5522209-3cb9-45d3-94f1-2a52c96e455a) 
 
-### **NOTA:** Al iniciar un proyecto es recomendable crear primero los archivos con accesibilidad publica y luego codificar los metodos. 
+## PARTE 4 - Metodos CargoDAL
+**Paso 1:** Ubicarse en la capa **"SistemaElParaisal.DAL"** y dar clic derecho y seleccionar **"Agregar > Clase"**.
+
+![image](https://github.com/user-attachments/assets/830112ac-8266-4320-ad40-8fb331927f60)
+
+**Paso 2:** Nombrar la clase **"CargoDAL.cs"** y dar clic en **Agregar**.
+
+![image](https://github.com/user-attachments/assets/e7378ac6-1fa9-49c9-bb5c-a2caa3af6612)
+
+**Paso 3:** Establecer como **"public"** la clase **"CargoDAL.cs"** y **Guardar** los cambios.
+
+![image](https://github.com/user-attachments/assets/737a1774-15fd-4304-ac36-688c7cbeb770)
+
+**Paso 4:** Agregar en la seccion de using las referencias a las bibliotecas de acceso a datos a utiizar.
+
+```csharp
+// Referencias
+using System.Data;
+using System.Data.SqlClient;
+// Referencias del proyecto
+using SistemaElParaisal.EN;
+```
+**Resultado:**
+![image](https://github.com/user-attachments/assets/b06c088c-28c1-45ec-92ad-7ac885493520)
+
+**Paso 5:** Identificar los metodos de **CargoDAL** segun el diagrama de clases y **Guardar** los cambios.
+
+![image](https://github.com/user-attachments/assets/4ee01977-4ec0-4b54-aa1d-5298ad77d3d6)
+
+**Paso 6:** Codificar el metodo **"ObtenerPorId"** en **CargoDAL** y **Guardar** los cambios.
+
+```csharp
+#region Metodos de Busqueda
+public static Cargo ObtenerPorId(byte pIdCargo)
+{
+    Cargo obj = new Cargo();
+
+    SqlCommand comando = ComunDB.ObtenerComando();
+    comando.CommandType = CommandType.StoredProcedure;
+    comando.CommandText = "SP_ObtenerCargoPorId";
+    comando.Parameters.AddWithValue("@IdCargo", pIdCargo);
+
+    SqlDataReader reader = ComunDB.EjecutarComandoReader(comando);
+    while (reader.Read())
+    {
+        // Orden de las columnas depende de la Consulta SELECT utilizada
+        obj.IdCargo = reader.GetByte(0); // Columna [0] cero
+        obj.Nombre = reader.GetString(1);  // Columna [1] uno
+    }
+    return obj;
+}
+#endregion
+```
+**NOTA:** Los parametros deben ir en el mismo orden y con el mismo nombre del procedimiento almacenado en el gestor de SQL Server.
+
+![image](https://github.com/user-attachments/assets/f45422b8-a289-48f6-8dc5-64b2f57ae903)
+
+**Resultado:**
+![image](https://github.com/user-attachments/assets/f66983b5-f02d-4f29-aec4-0087988475e6)
+
+- **SqlCommand:** clase que permite crear un objeto para enviar una consulta SQL a la base de datos establecida.
+- **CommandType** propiedad que permite establecer el tipo de consulta SQL a ejecutar ***Text*** o ***StoredProcedure*** 
+- **Parameters.AddWithValue:** metodo que permite agregar los parametros dentro de la consulta SQL.
+- **SqlDataReader:** clase que permite crear un objeto para ejecutar una consulta SQL de tipo SELECT y leer el resultado.
+- **GetByte:** metodo para leer un dato de tipo byte (tinyint)
+- **GetString:** metodo para leer un dato de tipo string (varchar)
+
+**Paso 6:** Codificar el metodo **"Buscar"** en **CargoDAL** y **Guardar** los cambios.
+
+```csharp
+public static List<Cargo> Buscar(Cargo pCargo)
+{
+    List<Cargo> lista = new List<Cargo>();
+
+    #region Proceso
+    using (SqlCommand comando = ComunDB.ObtenerComando())
+    {
+        byte contador = 0;
+        string whereSQL = " ";
+        string consulta = @"SELECT TOP 100 c.IdCargo, c.Nombre
+                            FROM Cargo c ";
+
+        // Validar filtros
+        if (pCargo.Nombre != null && pCargo.Nombre.Trim() != string.Empty)
+        {
+            if (contador > 0)
+                whereSQL += " AND ";
+            contador += 1;
+            whereSQL += " c.Nombre LIKE @Nombre ";
+            comando.Parameters.AddWithValue("@Nombre", "%" + pCargo.Nombre + "%");
+        }
+        // Agregar filtros
+        if (whereSQL.Trim().Length > 0)
+        {
+            whereSQL = " WHERE " + whereSQL;
+        }
+        comando.CommandText = consulta + whereSQL;
+
+        SqlDataReader reader = ComunDB.EjecutarComandoReader(comando);
+        while (reader.Read())
+        {
+            Cargo obj = new Cargo();
+            // Orden de las columnas depende de la Consulta SELECT utilizada
+            obj.IdCargo = reader.GetByte(0);
+            obj.Nombre = reader.GetString(1);
+            lista.Add(obj);
+        }
+        comando.Connection.Dispose();
+    }
+    #endregion
+    return lista;
+}
+```
+
+**Resultado:**
+![image](https://github.com/user-attachments/assets/17ccda30-698c-4a99-898d-d0effd3ac7e0)
+
+### **NOTA:** Al iniciar un proyecto es recomendable crear primero los archivos con accesibilidad publica y luego codificar los metodos.
 
 ## Archivo **CargoDAL.cs**
 ```csharp
