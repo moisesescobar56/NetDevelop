@@ -1,4 +1,4 @@
-## PARTE 3 - Configuracion de la comunDB
+# Configuracion de la comunDB
 Para poder obtener acceso a la base de datos utilizando esta arquitectura, sera necesario crear un archivo comun que contenga metodos para conectarse a una base de datos, crear consultas y obtener los resultados. A continuacion se creara y configurara la clase ComunDB.
 
 **Paso 1:** Ubicarse en la capa **"SistemaElParaisal.DAL"** y dar clic derecho y seleccionar **"Agregar > Clase"**.
