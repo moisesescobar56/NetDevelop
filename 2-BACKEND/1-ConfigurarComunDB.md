@@ -1,31 +1,66 @@
 # Configuracion de la comunDB
 Para poder obtener acceso a la base de datos utilizando esta arquitectura, sera necesario crear un archivo comun que contenga metodos para conectarse a una base de datos, crear consultas y obtener los resultados. A continuacion se creara y configurara la clase ComunDB.
 
+### PARTE 1: Instalar Microsoft.Data.SqlClient en capa DAL
+
+**Paso 1:** Ubicarse en la capa **"SistemaElParaisal.DAL"** y dar clic derecho y seleccionar **"Administrar paquetes nuget"**.
+<img width="1413" height="925" alt="image" src="https://github.com/user-attachments/assets/3ae68e90-0d04-46c7-8d08-d9de9a22610b" />
+
+**Resultado:**
+
+<img width="1413" height="925" alt="image" src="https://github.com/user-attachments/assets/5707adad-060f-4ac8-a6a8-05f4ed9a535b" />
+
+**Paso 2:** En la pestaña **"Examinar"**, buscar el paquete "Microsoft.Data.SqlClient".
+```
+Microsoft.Data.SqlClient
+```
+<img width="1413" height="925" alt="image" src="https://github.com/user-attachments/assets/864764a9-90a2-4e50-81be-6f336fb97d4a" />
+
+**Paso 3:** Seleccionar el primer resultado y dar clic en el boton **"Instalar"**.
+
+<img width="1413" height="925" alt="image" src="https://github.com/user-attachments/assets/ff9c3c96-6974-4b2e-b4dc-cd25f1545e6e" />
+
+**Paso 4:** Dar clic en **"Aplicar"** para aceptar la instalacion del paquete.
+
+<img width="1409" height="920" alt="image" src="https://github.com/user-attachments/assets/5cb0eec7-affd-4155-b01d-79ea8d9d71ba" />
+
+**Paso 5:** Dar clic en **"Aceptar"** para aceptar el uso de las licencias del paquete.
+
+<img width="1411" height="924" alt="image" src="https://github.com/user-attachments/assets/b62577f7-dcba-4de5-9bf3-bf8a9a321dcc" />
+
+**Resultado:**
+<img width="1413" height="925" alt="image" src="https://github.com/user-attachments/assets/42b11992-94e1-4771-b00e-75120f90a5d2" />
+
+### PARTE 2: Codificacion de clase ComunDB.cs
+
 **Paso 1:** Ubicarse en la capa **"SistemaElParaisal.DAL"** y dar clic derecho y seleccionar **"Agregar > Clase"**.
 
-![image](https://github.com/user-attachments/assets/f264c7fb-195b-43c3-a03f-b42bc0abde14)
+<img width="1413" height="925" alt="image" src="https://github.com/user-attachments/assets/dc87e334-8fb0-4534-923b-1d9f78e4ec9c" />
 
 **Paso 2:** Nombrar la clase **"ComunDB.cs"** y dar clic en **Agregar**.
 
-![image](https://github.com/user-attachments/assets/be894ec9-9052-4585-9a65-24d27b8a4a46)
+<img width="1413" height="925" alt="image" src="https://github.com/user-attachments/assets/ae6ad656-2bc3-447f-9d78-dc383ec86380" />
+
 
 **Resultado:**
-![image](https://github.com/user-attachments/assets/bca62f75-e4eb-47f0-9ffe-179c33d9d37a)
+<img width="1413" height="925" alt="image" src="https://github.com/user-attachments/assets/4660c781-344f-44be-81dd-ceebdfc304e8" />
 
 **Paso 3:** Establecer como **"public"** la clase **"ComunDB.cs"**
 
-![image](https://github.com/user-attachments/assets/626de071-5dae-4384-ac90-8169fc14fdc7)
+<img width="1413" height="925" alt="image" src="https://github.com/user-attachments/assets/187a7d53-ed94-4f97-8afe-c24f09d2a221" />
+
 
 **Paso 4:** Agregar en la seccion de using las referencias a las bibliotecas de acceso a datos a utiizar.
 
 ```csharp
-// Referencias
+// referencias
 using System.Data;
-using System.Data.SqlClient;
+using Microsoft.Data.SqlClient;
 ```
 
 **Resultado:**
-![image](https://github.com/user-attachments/assets/aa89eeb0-edde-46c8-98e5-245eb2a35bf7)
+<img width="1413" height="925" alt="image" src="https://github.com/user-attachments/assets/a0a38049-2696-48f7-8898-0518cb0a56c6" />
+
 
 **Paso 5:** Agregar el String de conexion y metodos de acceso a datos.
 
@@ -34,49 +69,55 @@ const string strConexion = @"Mi string de conexion aquí";
 
 private static SqlConnection ObtenerConexion()
 {
-    SqlConnection conexion = new SqlConnection(strConexion);
+    var conexion = new SqlConnection(strConexion);
     conexion.Open();
     return conexion;
 }
 
 public static SqlCommand ObtenerComando()
 {
-    SqlCommand comando = new SqlCommand();
-    comando.Connection = ObtenerConexion();
-    return comando;
+    return new SqlCommand
+    {
+        Connection = ObtenerConexion()
+    };
 }
 
-public static SqlCommand ObtenerComando(SqlTransaction pTransaction)
+public static SqlCommand ObtenerComando(SqlTransaction transaccion)
 {
-    // Sobre carga del metodo ObtenerComando para crear comandos de transaccion
-    SqlCommand comando = new SqlCommand();
-    comando.Connection = pTransaction.Connection;
-    comando.Transaction = pTransaction;
-    return comando;
+    return new SqlCommand
+    {
+        Connection = transaccion.Connection,
+        Transaction = transaccion
+    };
 }
 
-public static int EjecutarComando(SqlCommand pComando)
+public static int EjecutarComando(SqlCommand comando)
 {
-    int resultado = pComando.ExecuteNonQuery();
-    pComando.Connection.Close();
-    return resultado;
+    try
+    {
+        return comando.ExecuteNonQuery();
+    }
+    finally
+    {
+        comando.Connection?.Close();
+    }
 }
 
-public static SqlDataReader EjecutarComandoReader(SqlCommand pComando)
+public static SqlDataReader EjecutarComandoReader(SqlCommand comando)
 {
-    SqlDataReader reader = pComando.ExecuteReader(CommandBehavior.CloseConnection);
-    return reader;
+    return comando.ExecuteReader(CommandBehavior.CloseConnection);
 }
 
-public static SqlTransaction CrearTransaction()
+public static SqlTransaction CrearTransaccion()
 {
-    SqlConnection conexion = ObtenerConexion();
+    var conexion = ObtenerConexion();
     return conexion.BeginTransaction();
 }
 ```
 
 **Resultado:**
-![image](https://github.com/user-attachments/assets/154ca133-ce3c-4143-8e05-5b2a354a973d)
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/8e94c1e8-a32d-4c2f-b4b6-9f1ca8b0a1fe" />
+
 
 ### Configurar String de conexion
 Ver video: https://youtu.be/oct6MWqZhoE?si=cSlDKBCiX8MflLDY
@@ -90,56 +131,57 @@ using System.Text;
 using System.Threading.Tasks;
 // Referencias
 using System.Data;
-using System.Data.SqlClient;
+using Microsoft.Data.SqlClient;
 
 namespace SistemaElParaisal.DAL
 {
     public class ComunDB
     {
-        const string strConexion = @"Cadena de conexion aquí";
+        const string strConexion = @"Mi string de conexion aquí";
 
         private static SqlConnection ObtenerConexion()
         {
-            SqlConnection conexion = new SqlConnection(strConexion);
+            var conexion = new SqlConnection(strConexion);
             conexion.Open();
             return conexion;
         }
 
         public static SqlCommand ObtenerComando()
         {
-            SqlCommand comando = new SqlCommand();
-            comando.Connection = ObtenerConexion();
-            return comando;
+            return new SqlCommand  { Connection = ObtenerConexion() };
         }
 
-        public static SqlCommand ObtenerComando(SqlTransaction pTransaction)
+        public static SqlCommand ObtenerComando(SqlTransaction transaccion)
         {
-            // Sobre carga del metodo ObtenerComando para crear comandos de transaccion
-            SqlCommand comando = new SqlCommand();
-            comando.Connection = pTransaction.Connection;
-            comando.Transaction = pTransaction;
-            return comando;
+            return new SqlCommand
+            {
+                Connection = transaccion.Connection,
+                Transaction = transaccion
+            };
         }
 
-        public static int EjecutarComando(SqlCommand pComando)
+        public static int EjecutarComando(SqlCommand comando)
         {
-            int resultado = pComando.ExecuteNonQuery();
-            pComando.Connection.Close();
-            return resultado;
+            try
+            {
+                return comando.ExecuteNonQuery();
+            }
+            finally
+            {
+                comando.Connection?.Close();
+            }
         }
 
-        public static SqlDataReader EjecutarComandoReader(SqlCommand pComando)
+        public static SqlDataReader EjecutarComandoReader(SqlCommand comando)
         {
-            SqlDataReader reader = pComando.ExecuteReader(CommandBehavior.CloseConnection);
-            return reader;
+            return comando.ExecuteReader(CommandBehavior.CloseConnection);
         }
 
-        public static SqlTransaction CrearTransaction()
+        public static SqlTransaction CrearTransaccion()
         {
-            SqlConnection conexion = ObtenerConexion();
+            var conexion = ObtenerConexion();
             return conexion.BeginTransaction();
         }
     }
 }
-
 ```
