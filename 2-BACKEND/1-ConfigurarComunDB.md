@@ -4,6 +4,7 @@ Para poder obtener acceso a la base de datos utilizando esta arquitectura, sera 
 ### PARTE 1: Instalar Microsoft.Data.SqlClient en capa DAL
 
 **Paso 1:** Ubicarse en la capa **"SistemaElParaisal.DAL"** y dar clic derecho y seleccionar **"Administrar paquetes nuget"**.
+
 <img width="1413" height="925" alt="image" src="https://github.com/user-attachments/assets/3ae68e90-0d04-46c7-8d08-d9de9a22610b" />
 
 **Resultado:**
@@ -29,6 +30,7 @@ Microsoft.Data.SqlClient
 <img width="1411" height="924" alt="image" src="https://github.com/user-attachments/assets/b62577f7-dcba-4de5-9bf3-bf8a9a321dcc" />
 
 **Resultado:**
+
 <img width="1413" height="925" alt="image" src="https://github.com/user-attachments/assets/42b11992-94e1-4771-b00e-75120f90a5d2" />
 
 ### PARTE 2: Codificacion de clase ComunDB.cs
@@ -59,6 +61,7 @@ using Microsoft.Data.SqlClient;
 ```
 
 **Resultado:**
+
 <img width="1413" height="925" alt="image" src="https://github.com/user-attachments/assets/a0a38049-2696-48f7-8898-0518cb0a56c6" />
 
 
@@ -116,6 +119,7 @@ public static SqlTransaction CrearTransaccion()
 ```
 
 **Resultado:**
+
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/8e94c1e8-a32d-4c2f-b4b6-9f1ca8b0a1fe" />
 
 
