@@ -13,7 +13,7 @@ Es importante respetar el orden de creacion del diagrama de clases. Para el ejem
 
 ![image](https://github.com/user-attachments/assets/dcc9bfd9-6e92-4574-aef8-4fd7b8580d91)
 
-**IMPORTANTE:** se recomienda primero crear los archivos de clases, establecerlas como **"public"** y luego codificarlas.
+**IMPORTANTE:** se recomienda primero crear los archivos de clases  DAL, establecerlas como **"public"** y luego codificarlas.
 
 ## PARTE 3 - Metodos EmpleadoDAL
 **Paso 1:** Ubicarse en la capa **"SistemaElParaisal.DAL"** y dar clic derecho y seleccionar **"Agregar > Clase"**.
@@ -249,15 +249,17 @@ public static List<Empleado> Buscar(Empleado pEmpleado)
 ## PARTE 4 - Metodos CargoDAL
 **Paso 1:** Ubicarse en la capa **"SistemaElParaisal.DAL"** y dar clic derecho y seleccionar **"Agregar > Clase"**.
 
-![image](https://github.com/user-attachments/assets/830112ac-8266-4320-ad40-8fb331927f60)
+<img width="1413" height="928" alt="image" src="https://github.com/user-attachments/assets/575ab293-a4eb-4f4b-a98b-242b9a006cd4" />
 
 **Paso 2:** Nombrar la clase **"CargoDAL.cs"** y dar clic en **Agregar**.
 
-![image](https://github.com/user-attachments/assets/e7378ac6-1fa9-49c9-bb5c-a2caa3af6612)
+<img width="1407" height="927" alt="image" src="https://github.com/user-attachments/assets/b2bf801f-3029-4072-ad9f-7976cae30542" />
+
 
 **Paso 3:** Establecer como **"public"** la clase **"CargoDAL.cs"** y **Guardar** los cambios.
 
-![image](https://github.com/user-attachments/assets/737a1774-15fd-4304-ac36-688c7cbeb770)
+<img width="1413" height="928" alt="image" src="https://github.com/user-attachments/assets/0331b17c-4e4c-48c2-a73b-ad2dd5145f6a" />
+
 
 **Paso 4:** Agregar en la seccion de using las referencias a las bibliotecas de acceso a datos a utiizar.
 
@@ -268,7 +270,8 @@ using Microsoft.Data.SqlClient;
 using SistemaElParaisal.EN;
 ```
 **Resultado:**
-![image](https://github.com/user-attachments/assets/b06c088c-28c1-45ec-92ad-7ac885493520)
+<img width="1413" height="928" alt="image" src="https://github.com/user-attachments/assets/397ef315-0ad6-4b15-8d85-48ce0550a245" />
+
 
 **Paso 5:** Identificar los metodos de **CargoDAL** segun el diagrama de clases y **Guardar** los cambios.
 
@@ -277,7 +280,7 @@ using SistemaElParaisal.EN;
 **Paso 6:** Codificar el metodo **"ObtenerPorId"** en **CargoDAL** y **Guardar** los cambios.
 
 ```csharp
-#region Metodos de Busqueda
+#region BUSQUEDA
 public static Cargo ObtenerPorId(byte pIdCargo)
 {
     Cargo obj = new Cargo();
@@ -303,7 +306,8 @@ public static Cargo ObtenerPorId(byte pIdCargo)
 ![image](https://github.com/user-attachments/assets/f45422b8-a289-48f6-8dc5-64b2f57ae903)
 
 **Resultado:**
-![image](https://github.com/user-attachments/assets/f66983b5-f02d-4f29-aec4-0087988475e6)
+<img width="1413" height="928" alt="image" src="https://github.com/user-attachments/assets/167faad7-e425-4ed3-8ee1-aed65817812f" />
+
 
 - **SqlCommand:** clase que permite crear un objeto para enviar una consulta SQL a la base de datos establecida.
 - **CommandType** propiedad que permite establecer el tipo de consulta SQL a ejecutar ***Text*** o ***StoredProcedure*** 
@@ -355,33 +359,29 @@ public static List<Cargo> Buscar(Cargo pCargo)
         comando.Connection.Dispose();
     }
     #endregion
+
     return lista;
 }
 ```
 
 **Resultado:**
-![image](https://github.com/user-attachments/assets/17ccda30-698c-4a99-898d-d0effd3ac7e0)
+<img width="1413" height="997" alt="image" src="https://github.com/user-attachments/assets/34dcfb06-3df3-4016-83e0-1e3059e19b13" />
+
 
 ### **NOTA:** Al iniciar un proyecto es recomendable crear primero los archivos con accesibilidad publica y luego codificar los metodos.
 
 ## Archivo **CargoDAL.cs**
 ```csharp
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-// Referencias
+// referencias
 using System.Data;
-using System.Data.SqlClient;
-// Referencias del proyecto
+using Microsoft.Data.SqlClient;
 using SistemaElParaisal.EN;
 
 namespace SistemaElParaisal.DAL
 {
     public class CargoDAL
     {
-        #region Metodos de Busqueda
+        #region BUSQUEDA
         public static Cargo ObtenerPorId(byte pIdCargo)
         {
             Cargo obj = new Cargo();
@@ -400,7 +400,6 @@ namespace SistemaElParaisal.DAL
             }
             return obj;
         }
-
         public static List<Cargo> Buscar(Cargo pCargo)
         {
             List<Cargo> lista = new List<Cargo>();
@@ -411,16 +410,14 @@ namespace SistemaElParaisal.DAL
                 byte contador = 0;
                 string whereSQL = " ";
                 string consulta = @"SELECT TOP 100 c.IdCargo, c.Nombre
-                                    FROM Cargo c ";
+                            FROM Cargo c ";
 
                 // Validar filtros
                 if (pCargo.Nombre != null && pCargo.Nombre.Trim() != string.Empty)
                 {
                     if (contador > 0)
                         whereSQL += " AND ";
-
                     contador += 1;
-                    // @ValorNA = Valor Nombre/Apellido
                     whereSQL += " c.Nombre LIKE @Nombre ";
                     comando.Parameters.AddWithValue("@Nombre", "%" + pCargo.Nombre + "%");
                 }
@@ -441,7 +438,6 @@ namespace SistemaElParaisal.DAL
                     lista.Add(obj);
                 }
                 comando.Connection.Dispose();
-
             }
             #endregion
 
@@ -454,22 +450,17 @@ namespace SistemaElParaisal.DAL
 
 ## Archivo **EmpleadoDAL.cs**
 ```csharp
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-// Referencias
+// referencias
 using System.Data;
-using System.Data.SqlClient;
-// Referencias del proyecto
+using Microsoft.Data.SqlClient;
 using SistemaElParaisal.EN;
 
 namespace SistemaElParaisal.DAL
 {
     public class EmpleadoDAL
     {
-        #region Metodos GUARDAR, MODIFICAR Y ELIMINAR
+        #region GUARDAR, MODIFICAR Y ELIMINAR
+        // Codigo fuente
         public static int Guardar(Empleado pEmpleado)
         {
             SqlCommand comando = ComunDB.ObtenerComando();
@@ -482,7 +473,6 @@ namespace SistemaElParaisal.DAL
             comando.Parameters.AddWithValue("@Clave", pEmpleado.Clave);
             return ComunDB.EjecutarComando(comando);
         }
-        
         public static int Modificar(Empleado pEmpleado)
         {
             SqlCommand comando = ComunDB.ObtenerComando();
@@ -496,7 +486,6 @@ namespace SistemaElParaisal.DAL
             comando.Parameters.AddWithValue("@Clave", pEmpleado.Clave);
             return ComunDB.EjecutarComando(comando);
         }
-
         public static int Eliminar(Empleado pEmpleado)
         {
             SqlCommand comando = ComunDB.ObtenerComando();
@@ -507,8 +496,9 @@ namespace SistemaElParaisal.DAL
         }
         #endregion
 
-        #region Metodos de Busqueda
-        public static Empleado ObtenerPorId(int pIdEmpleado)
+        #region BUSQUEDA
+        // Codigo fuente
+        public static Empleado ObtenerPorId(short pIdEmpleado)
         {
             Empleado obj = new Empleado();
 
@@ -522,9 +512,9 @@ namespace SistemaElParaisal.DAL
             {
                 // Orden de las columnas depende de la Consulta SELECT utilizada
                 obj.IdEmpleado = reader.GetInt16(0); // Columna [0] cero
-                obj.IdCargo = reader.GetByte(1); // Columna [0] cero
-                obj.Nombre = reader.GetString(2);  // Columna [1] uno
-                obj.Apellido = reader.GetString(3); // Columna [2] dos
+                obj.IdCargo = reader.GetByte(1); // Columna [1] uno
+                obj.Nombre = reader.GetString(2);  // Columna [2] dos
+                obj.Apellido = reader.GetString(3); // Columna [3] tres
                 obj.Telefono = reader.GetString(4); // Columna [4] cuatro
             }
             return obj;
@@ -540,14 +530,13 @@ namespace SistemaElParaisal.DAL
                 byte contador = 0;
                 string whereSQL = " ";
                 string consulta = @"SELECT TOP 100 e.IdEmpleado, e.IdCargo, e.Nombre, e.Apellido, e.Telefono
-                                    FROM Empleado e ";
+                            FROM Empleado e ";
 
                 // Validar filtros
                 if (pEmpleado.IdCargo > 0)
                 {
                     if (contador > 0)
                         whereSQL += " AND ";
-
                     contador += 1;
                     whereSQL += " e.IdCargo = @IdCargo ";
                     comando.Parameters.AddWithValue("@IdCargo", pEmpleado.IdCargo);
@@ -556,7 +545,6 @@ namespace SistemaElParaisal.DAL
                 {
                     if (contador > 0)
                         whereSQL += " AND ";
-
                     contador += 1;
                     // @ValorNA = Valor Nombre/Apellido
                     whereSQL += " (e.Nombre LIKE @ValorNA OR e.Apellido LIKE @ValorNA) ";
@@ -566,7 +554,6 @@ namespace SistemaElParaisal.DAL
                 {
                     if (contador > 0)
                         whereSQL += " AND ";
-
                     contador += 1;
                     whereSQL += " e.Telefono = @Telefono ";
                     comando.Parameters.AddWithValue("@Telefono", pEmpleado.Telefono);
@@ -584,9 +571,9 @@ namespace SistemaElParaisal.DAL
                     Empleado obj = new Empleado();
                     // Orden de las columnas depende de la Consulta SELECT utilizada
                     obj.IdEmpleado = reader.GetInt16(0); // Columna [0] cero
-                    obj.IdCargo = reader.GetByte(1); // Columna [0] cero
-                    obj.Nombre = reader.GetString(2);  // Columna [1] uno
-                    obj.Apellido = reader.GetString(3); // Columna [2] dos
+                    obj.IdCargo = reader.GetByte(1); // Columna [1] uno
+                    obj.Nombre = reader.GetString(2);  // Columna [2] dos
+                    obj.Apellido = reader.GetString(3); // Columna [3] tres
                     obj.Telefono = reader.GetString(4); // Columna [4] cuatro
                     lista.Add(obj);
                 }
@@ -596,6 +583,7 @@ namespace SistemaElParaisal.DAL
 
             return lista;
         }
+
         #endregion
     }
 }
