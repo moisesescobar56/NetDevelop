@@ -9,14 +9,16 @@ Las pruebas de software ayudan a garantizar la calidad del código y son una par
 ## ¿Comó automatizar las pruebas unitarias ?
 Puede escribir primero pruebas unitarias como código. Luego, ejecute ese código de prueba de forma automática cada vez que realice cambios en el código del software. De esta forma, si una prueba falla, puede aislar con rapidez el área del código que tiene el error. 
 
-![image](https://github.com/user-attachments/assets/bdc1aa54-b9f4-4fba-bdf6-bd9d19d1dffc)
+<img width="1261" height="533" alt="image" src="https://github.com/user-attachments/assets/af446c4d-4766-4897-8127-ae430f14c86d" />
+
 
 ## PARTE 1 - Configuración de archivo “EmpleadoUnitTest.cs”
 
-**Paso 1:** Seleccionar el proyecto **“SistemaElParaisal.PruebasUnitarias”**, dar clic derecho y seleccionar 
-**Agregar > Prueba Unitaria**.
+**Paso 1:** Seleccionar el proyecto **“SistemaElParaisal.Pruebas”**, dar clic derecho y seleccionar 
+**Agregar > Nuevo elemento**.
 
-![image](https://github.com/user-attachments/assets/cebf6194-4392-4147-8099-50b20d0a087f)
+<img width="1413" height="888" alt="image" src="https://github.com/user-attachments/assets/a97199cc-98c9-43cd-8f5e-1e87f883e661" />
+
 
 **Paso 2:** Dar clic derecho sobre el archivo **UnitTest1.cs** y seleccionar **Cambiar nombre**.
 
