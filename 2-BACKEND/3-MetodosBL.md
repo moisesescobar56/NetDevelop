@@ -19,15 +19,15 @@ Es importante respetar el orden de creacion del diagrama de clases. Para el ejem
 ## PARTE 3 - Metodos EmpleadoBL
 **Paso 1:** Ubicarse en la capa **"SistemaElParaisal.BL"** y dar clic derecho y seleccionar **"Agregar > Clase"**.
 
-![image](https://github.com/user-attachments/assets/1c265857-26c3-483d-ac8a-e728617f1b10)
+<img width="1413" height="944" alt="image" src="https://github.com/user-attachments/assets/7fc47d0d-0786-4e10-922c-88799ac7bef8" />
 
 **Paso 2:** Nombrar la clase **"EmpleadoBL.cs"** y dar clic en **Agregar**.
 
-![image](https://github.com/user-attachments/assets/d5c6794b-de84-447f-970e-b7e21532e0b0)
+<img width="1412" height="941" alt="image" src="https://github.com/user-attachments/assets/47677f9a-964b-4fcf-981b-d9da0c4c40a7" />
 
 **Paso 3:** Establecer como **"public"** la clase **"EmpleadoBL.cs"** y **Guardar** los cambios.
 
-![image](https://github.com/user-attachments/assets/d82d163f-572f-4be8-af69-7c1c5aa2b4c4)
+<img width="1413" height="944" alt="image" src="https://github.com/user-attachments/assets/8796ccfd-d6d0-444f-b119-5cc23741f962" />
 
 **Paso 4:** Agregar en la seccion de using las referencias a las bibliotecas del proyecto a utilizar.
 
@@ -39,34 +39,38 @@ using SistemaElParaisal.EN;
 using SistemaElParaisal.DAL;
 ```
 **Resultado:**
-![image](https://github.com/user-attachments/assets/a5b31828-2be9-4d0e-b920-87d4cf8cee93)
+<img width="1413" height="944" alt="image" src="https://github.com/user-attachments/assets/3a96684f-4137-43ed-b46f-9e3b899cffbe" />
 
-**Paso 4:** Codificar los metodos intermediarios de **EmpleadoBL** segun el diagrama de clases y **Guardar** los cambios.
+
+**Paso 4:** Codificar los metodos intermediarios CRUD de **EmpleadoBL** segun el diagrama de clases y **Guardar** los cambios.
 
 ![image](https://github.com/user-attachments/assets/f5f35585-645f-45aa-8347-88327f4dc4ad)
 
 ```csharp
-private static string CifrarHashSha256(string pTexto)
-{
-    // Metodo para cifrar las claves
-    byte[] bytes = Encoding.Unicode.GetBytes(pTexto);
-    SHA256Managed hashstring = new SHA256Managed();
-    byte[] hash = hashstring.ComputeHash(bytes);
-    string hashString = string.Empty;
-    foreach (byte x in hash)
+private static string CifrarSha256(string pTexto)
+{ 
+    byte[] bytes = Encoding.Unicode.GetBytes(pTexto); // Codificar el texto a bytes
+    // Crear y usar SHA256 de forma segura
+    using (SHA256 sha256 = SHA256.Create()) 
     {
-        hashString += String.Format("{0:x2}", x);
+        byte[] hash = sha256.ComputeHash(bytes);
+        // Convertir hash a cadena hexadecimal
+        StringBuilder hashString = new StringBuilder();
+        foreach (byte x in hash)
+        {
+            hashString.AppendFormat("{0:x2}", x);
+        }
+        return hashString.ToString();
     }
-    return hashString;
 }
 public int Guardar(Empleado pEmpleado)
 {
-    pEmpleado.Clave = CifrarHashSha256(pEmpleado.Clave);
+    pEmpleado.Clave = CifrarSha256(pEmpleado.Clave); // encriptar contraseña
     return EmpleadoDAL.Guardar(pEmpleado);
 }
 public int Modificar(Empleado pEmpleado)
 {
-    pEmpleado.Clave = CifrarHashSha256(pEmpleado.Clave);
+    pEmpleado.Clave = CifrarSha256(pEmpleado.Clave); // encriptar contraseña
     return EmpleadoDAL.Modificar(pEmpleado);
 }
 public int Eliminar(Empleado pEmpleado)
@@ -82,33 +86,40 @@ public List<Empleado> Buscar(Empleado pEmpleado)
     return EmpleadoDAL.Buscar(pEmpleado);
 }
 ```
-- **CifrarHashSha256:** Metodo secreto creado para cifrar textos en Hash SHA256
+- **CifrarSha256:** Metodo secreto creado para cifrar textos generando un Hash unico de SHA256.
+
+### NOTA: El metodo CifrarSha256 solo se usa en clases de Usuario que necesiten encriptar campos como clave/contraseña o similar. Para otras clases no debe incluirse. 
 
 **Resultado:**
-![image](https://github.com/user-attachments/assets/89f5c14f-a1b8-45e6-8a87-962c7ad3d4cb)
+<img width="1413" height="1032" alt="image" src="https://github.com/user-attachments/assets/8c9b80ac-c546-4a02-a1b3-4c924e7a5c79" />
+
 
 ## PARTE 4 - Metodos CargoBL
 **Paso 1:** Ubicarse en la capa **"SistemaElParaisal.BL"** y dar clic derecho y seleccionar **"Agregar > Clase"**.
 
-![image](https://github.com/user-attachments/assets/1c265857-26c3-483d-ac8a-e728617f1b10)
+<img width="1413" height="888" alt="image" src="https://github.com/user-attachments/assets/8247508c-a810-417d-8abd-4d8d6a05ecac" />
+
 
 **Paso 2:** Nombrar la clase **"CargoBL.cs"** y dar clic en **Agregar**.
 
-![image](https://github.com/user-attachments/assets/0ba0e329-a32a-46e6-8e43-4b5fd5dab681)
+<img width="1409" height="888" alt="image" src="https://github.com/user-attachments/assets/ff070ef6-db8c-47eb-a747-8bf96e5637a2" />
+
 
 **Paso 3:** Establecer como **"public"** la clase **"CargoBL.cs"** y **Guardar** los cambios.
 
-![image](https://github.com/user-attachments/assets/2283fed5-cb8f-4fef-a0c6-04a21bd46a9f)
+<img width="1413" height="888" alt="image" src="https://github.com/user-attachments/assets/11f0f53d-0033-4fe6-a9de-a2c67b909c58" />
+
 
 **Paso 4:** Agregar en la seccion de using las referencias a las bibliotecas del proyecto a utilizar.
 
 ```csharp
-// Referencias del proyecto
+// Referencias
 using SistemaElParaisal.EN;
 using SistemaElParaisal.DAL;
 ```
 **Resultado:**
-![image](https://github.com/user-attachments/assets/33095c68-2fca-46d5-b002-a29092106eac)
+<img width="1413" height="888" alt="image" src="https://github.com/user-attachments/assets/67875869-0f87-4dbc-8a0e-6fcd0e5c0a6f" />
+
 
 **Paso 4:** Codificar los metodos intermediarios de **CargoBL** segun el diagrama de clases y **Guardar** los cambios.
 
@@ -126,18 +137,14 @@ public List<Cargo> Buscar(Cargo pCargo)
 ```
 
 **Resultado:**
-![image](https://github.com/user-attachments/assets/033dbeaa-c627-4c11-8a35-6da5ef22e600)
+<img width="1413" height="888" alt="image" src="https://github.com/user-attachments/assets/e02c860b-c252-47e5-b446-06478433b94b" />
+
 
 ### **NOTA:** Al iniciar un proyecto es recomendable crear primero los archivos con accesibilidad publica y luego codificarlos. 
 
 ## Archivo **CargoBL.cs**
 ```csharp
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-// Referencias del proyecto
+// Referencias
 using SistemaElParaisal.EN;
 using SistemaElParaisal.DAL;
 
@@ -159,42 +166,41 @@ namespace SistemaElParaisal.BL
 
 ## Archivo **EmpleadoBL.cs**
 ```csharp
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 //Referencias
-using System.Security.Cryptography;
+using SistemaElParaisal.DAL;
 // Referencias del proyecto
 using SistemaElParaisal.EN;
-using SistemaElParaisal.DAL;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace SistemaElParaisal.BL
 {
     public class EmpleadoBL
     {
-        private static string CifrarHashSha256(string pTexto)
-        {
-            // Metodo para cifrar las claves
-            byte[] bytes = Encoding.Unicode.GetBytes(pTexto);
-            SHA256Managed hashstring = new SHA256Managed();
-            byte[] hash = hashstring.ComputeHash(bytes);
-            string hashString = string.Empty;
-            foreach (byte x in hash)
+        private static string CifrarSha256(string pTexto)
+        { 
+            byte[] bytes = Encoding.Unicode.GetBytes(pTexto); // Codificar el texto a bytes
+            // Crear y usar SHA256 de forma segura
+            using (SHA256 sha256 = SHA256.Create()) 
             {
-                hashString += String.Format("{0:x2}", x);
+                byte[] hash = sha256.ComputeHash(bytes);
+                // Convertir hash a cadena hexadecimal
+                StringBuilder hashString = new StringBuilder();
+                foreach (byte x in hash)
+                {
+                    hashString.AppendFormat("{0:x2}", x);
+                }
+                return hashString.ToString();
             }
-            return hashString;
         }
         public int Guardar(Empleado pEmpleado)
         {
-            pEmpleado.Clave = CifrarHashSha256(pEmpleado.Clave);
+            pEmpleado.Clave = CifrarSha256(pEmpleado.Clave); // encriptar contraseña
             return EmpleadoDAL.Guardar(pEmpleado);
         }
         public int Modificar(Empleado pEmpleado)
         {
-            pEmpleado.Clave = CifrarHashSha256(pEmpleado.Clave);
+            pEmpleado.Clave = CifrarSha256(pEmpleado.Clave); // encriptar contraseña
             return EmpleadoDAL.Modificar(pEmpleado);
         }
         public int Eliminar(Empleado pEmpleado)
