@@ -41,12 +41,7 @@ using SistemaElParaisal.EN;
 **Resultado:**
 <img width="1413" height="925" alt="image" src="https://github.com/user-attachments/assets/f68c4280-b3ea-4a47-b86c-f506a5b40274" />
 
-
-**Paso 5:** Identificar los metodos de **CargoDAL** segun el diagrama de clases y **Guardar** los cambios.
-
-![image](https://github.com/user-attachments/assets/f5f35585-645f-45aa-8347-88327f4dc4ad)
-
-**Paso 6:** Agregar #region [titulo] y #endregion para mantener organizado el codigo fuente.
+**Paso 5:** Agregar #region [titulo] y #endregion para mantener organizado el codigo fuente.
 ```csharp
 #region GUARDAR, MODIFICAR Y ELIMINAR
 // Codigo fuente
@@ -62,6 +57,11 @@ using SistemaElParaisal.EN;
 **Resultado:**
 
 <img width="1413" height="925" alt="image" src="https://github.com/user-attachments/assets/66dda9ca-ad69-4070-bc6f-ce25d1de6d8c" />
+
+**Paso 6:** Identificar los metodos de **CargoDAL** segun el diagrama de clases y **Guardar** los cambios.
+
+![image](https://github.com/user-attachments/assets/f5f35585-645f-45aa-8347-88327f4dc4ad)
+
 
 
 **Paso 7:** Codificar el metodo **"Guardar"** en **EmpleadoDAL** y **Guardar** los cambios.
