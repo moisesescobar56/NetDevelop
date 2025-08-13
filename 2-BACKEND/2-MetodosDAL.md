@@ -18,35 +18,54 @@ Es importante respetar el orden de creacion del diagrama de clases. Para el ejem
 ## PARTE 3 - Metodos EmpleadoDAL
 **Paso 1:** Ubicarse en la capa **"SistemaElParaisal.DAL"** y dar clic derecho y seleccionar **"Agregar > Clase"**.
 
-![image](https://github.com/user-attachments/assets/830112ac-8266-4320-ad40-8fb331927f60)
+<img width="1413" height="925" alt="image" src="https://github.com/user-attachments/assets/e953077f-a7dd-4a99-92fc-eed031eb4aa4" />
+
 
 **Paso 2:** Nombrar la clase **"EmpleadoDAL.cs"** y dar clic en **Agregar**.
 
-![image](https://github.com/user-attachments/assets/a1a1587c-c89c-45b9-af85-fb68174cac9d)
+<img width="1409" height="922" alt="image" src="https://github.com/user-attachments/assets/57481a46-a7da-40d9-926f-85da1b1f747a" />
+
 
 **Paso 3:** Establecer como **"public"** la clase **"EmpleadoDAL.cs"** y **Guardar** los cambios.
 
-![image](https://github.com/user-attachments/assets/456ee339-1595-4840-877e-2c2e7dac19be)
+<img width="1413" height="925" alt="image" src="https://github.com/user-attachments/assets/25c06748-7a48-43a7-958a-ec4acdac713d" />
 
 **Paso 4:** Agregar en la seccion de using las referencias a las bibliotecas de acceso a datos a utiizar.
 
 ```csharp
-// Referencias
+// referencias
 using System.Data;
-using System.Data.SqlClient;
-// Referencias del proyecto
+using Microsoft.Data.SqlClient;
 using SistemaElParaisal.EN;
 ```
 **Resultado:**
-![image](https://github.com/user-attachments/assets/ff7b3897-2766-4f46-ab10-031c66c17763)
+<img width="1413" height="925" alt="image" src="https://github.com/user-attachments/assets/f68c4280-b3ea-4a47-b86c-f506a5b40274" />
+
 
 **Paso 5:** Identificar los metodos de **CargoDAL** segun el diagrama de clases y **Guardar** los cambios.
 
 ![image](https://github.com/user-attachments/assets/f5f35585-645f-45aa-8347-88327f4dc4ad)
 
-**Paso 6:** Codificar el metodo **"Guardar"** en **EmpleadoDAL** y **Guardar** los cambios.
+**Paso 6:** Agregar #region [titulo] y #endregion para mantener organizado el codigo fuente.
 ```csharp
-#region Metodos GUARDAR, MODIFICAR Y ELIMINAR
+#region GUARDAR, MODIFICAR Y ELIMINAR
+// Codigo fuente
+
+#endregion
+
+#region BUSQUEDA
+// Codigo fuente
+
+#endregion
+```
+
+**Resultado:**
+
+<img width="1413" height="925" alt="image" src="https://github.com/user-attachments/assets/66dda9ca-ad69-4070-bc6f-ce25d1de6d8c" />
+
+
+**Paso 7:** Codificar el metodo **"Guardar"** en **EmpleadoDAL** y **Guardar** los cambios.
+```csharp
 public static int Guardar(Empleado pEmpleado)
 {
     SqlCommand comando = ComunDB.ObtenerComando();
@@ -59,7 +78,6 @@ public static int Guardar(Empleado pEmpleado)
     comando.Parameters.AddWithValue("@Clave", pEmpleado.Clave);
     return ComunDB.EjecutarComando(comando);
 }
-#endregion
 ```
 **NOTA:** Los parametros deben ir en el mismo orden y con el mismo nombre del procedimiento almacenado en el gestor de SQL Server.
 
@@ -70,9 +88,10 @@ public static int Guardar(Empleado pEmpleado)
 - **Parameters.AddWithValue:** metodo que permite agregar los parametros dentro de la consulta SQL.
 
 **Resultado:**
-![image](https://github.com/user-attachments/assets/a13360d7-0e7b-49c7-b3f1-583cae8a2c95)
 
-**Paso 7:** Codificar el metodo **"Modificar"** en **EmpleadoDAL** y **Guardar** los cambios.
+<img width="1413" height="925" alt="image" src="https://github.com/user-attachments/assets/d64a05c9-03e2-4ff6-9e88-76296eede48a" />
+
+**Paso 8:** Codificar el metodo **"Modificar"** en **EmpleadoDAL** y **Guardar** los cambios.
 ```csharp
 public static int Modificar(Empleado pEmpleado)
 {
@@ -93,9 +112,11 @@ public static int Modificar(Empleado pEmpleado)
 ![image](https://github.com/user-attachments/assets/21704618-56a2-4e3e-947c-ce73f4db0aa8)
 
 **Resultado:**
-![image](https://github.com/user-attachments/assets/99e75be6-62d7-4204-b360-816cf53e2974)
 
-**Paso 8:** Codificar el metodo **"Eliminar"** en **EmpleadoDAL** y **Guardar** los cambios.
+<img width="1413" height="925" alt="image" src="https://github.com/user-attachments/assets/7e37650d-c9e5-4946-9044-68b7d3bcc72e" />
+
+
+**Paso 9:** Codificar el metodo **"Eliminar"** en **EmpleadoDAL** y **Guardar** los cambios.
 ```csharp
 public static int Eliminar(Empleado pEmpleado)
 {
@@ -111,11 +132,10 @@ public static int Eliminar(Empleado pEmpleado)
 ![image](https://github.com/user-attachments/assets/47a48ad2-2532-49c8-8e4d-5c2848a1d84f)
 
 **Resultado:**
-![image](https://github.com/user-attachments/assets/8f76d505-a433-4cbb-a015-7ee5a000aa2f)
+<img width="1413" height="925" alt="image" src="https://github.com/user-attachments/assets/1cea1641-aabf-4723-b8e0-7d543174aaaf" />
 
-**Paso 8:** Codificar el metodo **"ObtenerPorId"** en **EmpleadoDAL** y **Guardar** los cambios.
+**Paso 10:** Codificar el metodo **"ObtenerPorId"** en **EmpleadoDAL** y **Guardar** los cambios.
 ```csharp
-#region Metodos de Busqueda
 public static Empleado ObtenerPorId(short pIdEmpleado)
 {
     Empleado obj = new Empleado();
@@ -130,21 +150,23 @@ public static Empleado ObtenerPorId(short pIdEmpleado)
     {
         // Orden de las columnas depende de la Consulta SELECT utilizada
         obj.IdEmpleado = reader.GetInt16(0); // Columna [0] cero
-        obj.IdCargo = reader.GetByte(1); // Columna [0] cero
-        obj.Nombre = reader.GetString(2);  // Columna [1] uno
-        obj.Apellido = reader.GetString(3); // Columna [2] dos
+        obj.IdCargo = reader.GetByte(1); // Columna [1] uno
+        obj.Nombre = reader.GetString(2);  // Columna [2] dos
+        obj.Apellido = reader.GetString(3); // Columna [3] tres
         obj.Telefono = reader.GetString(4); // Columna [4] cuatro
     }
     return obj;
 }
-#endregion
 ```
 **NOTA:** Los parametros deben ir en el mismo orden y con el mismo nombre del procedimiento almacenado en el gestor de SQL Server.
 
-![image](https://github.com/user-attachments/assets/c1dbcd87-9475-414f-af3a-b944aef26eca)
+<img width="853" height="243" alt="image" src="https://github.com/user-attachments/assets/84ac64bf-8275-468c-a414-a95ba2dfa02b" />
+
 
 **Resultado:**
-![image](https://github.com/user-attachments/assets/540e788a-8ac4-4bf2-9857-3f8c50285ab3)
+
+<img width="1413" height="925" alt="image" src="https://github.com/user-attachments/assets/9d305d86-eb9e-4a1b-8f1a-c99271eae82a" />
+
 
 - **SqlCommand:** clase que permite crear un objeto para enviar una consulta SQL a la base de datos establecida.
 - **CommandType** propiedad que permite establecer el tipo de consulta SQL a ejecutar ***Text*** o ***StoredProcedure*** 
@@ -154,7 +176,7 @@ public static Empleado ObtenerPorId(short pIdEmpleado)
 - **GetByte:** metodo para leer un dato de tipo byte (tinyint)
 - **GetString:** metodo para leer un dato de tipo string (varchar)
 
-**Paso 9:** Codificar el metodo **"Buscar"** en **EmpleadoDAL** y **Guardar** los cambios.
+**Paso 11:** Codificar el metodo **"Buscar"** en **EmpleadoDAL** y **Guardar** los cambios.
 ```csharp
 public static List<Empleado> Buscar(Empleado pEmpleado)
 {
@@ -207,9 +229,9 @@ public static List<Empleado> Buscar(Empleado pEmpleado)
             Empleado obj = new Empleado();
             // Orden de las columnas depende de la Consulta SELECT utilizada
             obj.IdEmpleado = reader.GetInt16(0); // Columna [0] cero
-            obj.IdCargo = reader.GetByte(1); // Columna [0] cero
-            obj.Nombre = reader.GetString(2);  // Columna [1] uno
-            obj.Apellido = reader.GetString(3); // Columna [2] dos
+            obj.IdCargo = reader.GetByte(1); // Columna [1] uno
+            obj.Nombre = reader.GetString(2);  // Columna [2] dos
+            obj.Apellido = reader.GetString(3); // Columna [3] tres
             obj.Telefono = reader.GetString(4); // Columna [4] cuatro
             lista.Add(obj);
         }
@@ -221,7 +243,8 @@ public static List<Empleado> Buscar(Empleado pEmpleado)
 }
 ```
 **Resultado:**
-![image](https://github.com/user-attachments/assets/f5522209-3cb9-45d3-94f1-2a52c96e455a) 
+<img width="1413" height="962" alt="image" src="https://github.com/user-attachments/assets/a617c24e-cb13-417a-8511-cc20e1a7a9c7" />
+
 
 ## PARTE 4 - Metodos CargoDAL
 **Paso 1:** Ubicarse en la capa **"SistemaElParaisal.DAL"** y dar clic derecho y seleccionar **"Agregar > Clase"**.
@@ -239,10 +262,9 @@ public static List<Empleado> Buscar(Empleado pEmpleado)
 **Paso 4:** Agregar en la seccion de using las referencias a las bibliotecas de acceso a datos a utiizar.
 
 ```csharp
-// Referencias
+// referencias
 using System.Data;
-using System.Data.SqlClient;
-// Referencias del proyecto
+using Microsoft.Data.SqlClient;
 using SistemaElParaisal.EN;
 ```
 **Resultado:**
