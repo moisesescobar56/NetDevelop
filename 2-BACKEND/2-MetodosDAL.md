@@ -58,7 +58,7 @@ using SistemaElParaisal.EN;
 
 <img width="1413" height="925" alt="image" src="https://github.com/user-attachments/assets/66dda9ca-ad69-4070-bc6f-ce25d1de6d8c" />
 
-**Paso 6:** Identificar los metodos de **CargoDAL** segun el diagrama de clases y **Guardar** los cambios.
+**Paso 6:** Identificar los metodos de **EmpleadoDAL** segun el diagrama de clases y **Codificar** la logica.
 
 ![image](https://github.com/user-attachments/assets/f5f35585-645f-45aa-8347-88327f4dc4ad)
 
