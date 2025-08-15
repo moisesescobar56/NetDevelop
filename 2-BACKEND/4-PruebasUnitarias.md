@@ -182,24 +182,21 @@ public void T5_Buscar()
 **Paso 1:** Seleccionar el proyecto **“SistemaElParaisal.Pruebas”**, dar clic derecho y seleccionar 
 **Agregar > Nuevo elemento**.
 
-<img width="1413" height="888" alt="image" src="https://github.com/user-attachments/assets/a97199cc-98c9-43cd-8f5e-1e87f883e661" />
+<img width="1413" height="887" alt="image" src="https://github.com/user-attachments/assets/1c43476f-6746-4622-af04-4698e82217a5" />
 
 **Paso 2:** En la opcion **"Prueba/Test"** , seleccionar el tipo **"Clase de prueba de MSTest"**.
 
-![image](https://github.com/user-attachments/assets/68901003-53b5-4258-a0fb-09ca8e981ee4)
+<img width="1410" height="887" alt="image" src="https://github.com/user-attachments/assets/d7feec00-ff4f-4845-9a1c-442114b980fc" />
 
-**Paso 3:** Ingresar el nombre **“CargoUnitTest.cs”** y pulsar la tecla Enter. 
+**Paso 3:** Ingresar el nombre **“CargoUnitTest.cs”** y dar clic en **Agregar**. 
 
-![image](https://github.com/user-attachments/assets/8d9d3a94-ed76-4de9-9a8d-75f4189880b4)
+<img width="1411" height="886" alt="image" src="https://github.com/user-attachments/assets/b18fc543-7b57-4cc7-8cf1-285e30806337" />
 
-**Paso 4:** En el siguiente cuadro de dialogo seleccionar **"Si"**. Para que cambie en todas las referencias el 
-nombre del archivo. 
-
-![image](https://github.com/user-attachments/assets/2e1dd1cd-92c6-4275-a3d3-17f1b81efdf6)
 
 **Resultado:**
 
-![image](https://github.com/user-attachments/assets/38793d30-0ce3-4adf-92f5-74504b4bd563)
+<img width="1413" height="887" alt="image" src="https://github.com/user-attachments/assets/36e07a12-2e8b-4c20-8fba-fef41ef6c2aa" />
+
 
 **Paso 5:** Agregar las **referencias a bibliotecas** para acceder a la tabla Cargo en la base de datos 
 desde el archivo **“CargoUnitTest.cs”**.
@@ -210,14 +207,17 @@ using SistemaElParaisal.EN;
 using SistemaElParaisal.BL;
 ```
 
-![image](https://github.com/user-attachments/assets/49328cc5-898b-4ca5-b71d-7443868ec14b)
+<img width="1413" height="887" alt="image" src="https://github.com/user-attachments/assets/57515c37-f7ec-4ba7-b250-4119676775dd" />
+
 
 **Paso 6:** Borrar el método **TestMethod1** del archivo **“CargoUnitTest.cs”**.
 
-![image](https://github.com/user-attachments/assets/e58392e5-6bfc-4de5-8ba6-23a2e725a734)
+<img width="1413" height="887" alt="image" src="https://github.com/user-attachments/assets/5cd3b33d-ad68-4602-a624-dc7bb197ada6" />
+
 
 **Resultado:**
-![image](https://github.com/user-attachments/assets/7e28b57f-79d8-4042-be64-7df685f069bb)
+<img width="1413" height="887" alt="image" src="https://github.com/user-attachments/assets/4bbbee42-c231-402f-9379-863648ee2d60" />
+
 
 ## PARTE 4 - Programación de métodos de prueba en “CargoUnitTest.cs” 
 
@@ -225,10 +225,11 @@ using SistemaElParaisal.BL;
 
 **Paso 1:** Agregar la instancia a la clase **CargoBL** para acceder a la tabla Cargos de la base de  datos.
 ```csharp
-// Conexion a la tabla de Cargos en la DB mediante una instancia de CargoBL
+// Conexion a tabla de Cargos en la DB desde una nueva instancia de CargoBL
 CargoBL cargoBL = new CargoBL();
 ```
-![image](https://github.com/user-attachments/assets/a2374c10-07b6-43e4-84d7-51c2000382f9)
+<img width="1413" height="887" alt="image" src="https://github.com/user-attachments/assets/22038251-e175-4a85-8f26-3d923145e8a8" />
+
 
 **Paso 2:** Programar el **[TestMethod]** para verificar el funcionamiento del método **ObtenerPorId**
 de **CargoBL**. 
@@ -245,7 +246,8 @@ public void T1_ObtenerPorId()
     Assert.AreNotEqual(0, cargo.IdCargo);
 }
 ```
-![image](https://github.com/user-attachments/assets/3319ccab-d58c-403a-8907-81183120b833)
+<img width="1413" height="887" alt="image" src="https://github.com/user-attachments/assets/6cc50f4d-ce88-4c30-9e5f-769a6e9275cb" />
+
 
 **Paso 3:** Programar el **[TestMethod]** para verificar el funcionamiento del método **Buscar** de 
 **CargoBL**.
@@ -253,6 +255,7 @@ public void T1_ObtenerPorId()
 [TestMethod]
 public void T2_Buscar()
 {
+	// Aplicar filtro de busqueda por Nombre
     List<Cargo> lista = cargoBL.Buscar(new Cargo { Nombre = "ADMIN" });
 
     // Comprobacion de la prueba
@@ -261,148 +264,143 @@ public void T2_Buscar()
 }
 ```
 
-![image](https://github.com/user-attachments/assets/61f52df4-3742-4331-a739-de1bd5136c8e)
+<img width="1413" height="887" alt="image" src="https://github.com/user-attachments/assets/880fce09-e67f-4ff9-a397-0924d333f1a8" />
+
 
 
 ## PARTE 5 - Ejecutar Pruebas Unitarias desde Visual Studio 
-**Paso 1:** Seleccionar el proyecto “SistemaElParaisal.PruebasUnitarias” y dar clic derecho sobre el 
+**Paso 1:** Seleccionar el proyecto “SistemaElParaisal.Pruebas” y dar clic derecho sobre el 
 proyecto y seleccionar **Ejecutar pruebas**.
 
-![image](https://github.com/user-attachments/assets/5ed370b9-4071-4043-aaa7-f5f015bb6bda)
+<img width="1413" height="887" alt="image" src="https://github.com/user-attachments/assets/d32ed12e-d115-4718-b7b6-c3f199f51b00" />
+
 
 **Resultado:**
-![image](https://github.com/user-attachments/assets/e939c43c-c8ec-4939-ae2d-9b8369ed8867)
+<img width="1161" height="533" alt="image" src="https://github.com/user-attachments/assets/e363380d-574f-4a29-b5e0-14d189003627" />
+
 
 
 ## Archivo **CargoUnitTest.cs**
 ```csharp
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
 // Referencias
-using System.Collections.Generic;
-// Referencias de proyecto
 using SistemaElParaisal.EN;
 using SistemaElParaisal.BL;
 
-namespace SistemaElParaisal.PruebasUnitarias
+namespace SistemaElParaisal.Pruebas;
+
+[TestClass]
+public class CargoUnitTest
 {
-    [TestClass]
-    public class CargoUnitTest
+    // Conexion a tabla de Cargos en la DB desde una nueva instancia de CargoBL
+    CargoBL cargoBL = new CargoBL();
+
+    [TestMethod]
+    public void T1_ObtenerPorId()
     {
-        // Conexion a la tabla de Cargos en la DB mediante una instancia de CargoBL
-        CargoBL cargoBL = new CargoBL();
+        // Buscar el cargo con id = 1
+        Cargo cargo = cargoBL.ObtenerPorId(1);
 
-        [TestMethod]
-        public void T1_ObtenerPorId()
-        {
-            // Buscar el cargo con id = 1
-            Cargo cargo = cargoBL.ObtenerPorId(1);
+        // Comprobacion de la prueba
+        // si el Id de Cargo es diferente de 0, el Cargo se obtuvo por Id correctamente
+        Assert.AreNotEqual(0, cargo.IdCargo);
+    }
 
-            // Comprobacion de la prueba
-            // si el Id de Cargo es diferente de 0, el Cargo se obtuvo por Id correctamente
-            Assert.AreNotEqual(0, cargo.IdCargo);
-        }
+    [TestMethod]
+    public void T2_Buscar()
+    {
+        // Aplicar filtro de busqueda por Nombre
+        List<Cargo> lista = cargoBL.Buscar(new Cargo { Nombre = "ADMIN" });
 
-        [TestMethod]
-        public void T2_Buscar()
-        {
-            List<Cargo> lista = cargoBL.Buscar(new Cargo { Nombre = "ADMIN" });
-
-            // Comprobacion de la prueba
-            // si el total de la lista es diferente de 0, los Cargos se buscaron correctamente
-            Assert.AreNotEqual(0, lista.Count);
-        }
+        // Comprobacion de la prueba
+        // si el total de la lista es diferente de 0, los Cargos se buscaron correctamente
+        Assert.AreNotEqual(0, lista.Count);
     }
 }
 ```
 
 ## Archivo **EmpleadoUnitTest.cs**
 ```csharp
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
 // Referencias
-using System.Collections.Generic;
-// Referencias del proyecto
 using SistemaElParaisal.EN;
 using SistemaElParaisal.BL;
 
-namespace SistemaElParaisal.PruebasUnitarias
+namespace SistemaElParaisal.Pruebas;
+
+[TestClass]
+public class EmpleadoUnitTest
 {
-    [TestClass]
-    public class EmpleadoUnitTest
+    // Conexion a tabla de Empleados en la DB desde una nueva instancia de EmpleadoBL
+    EmpleadoBL empleadoBL = new EmpleadoBL();
+
+    [TestMethod]
+    public void T1_Guardar()
     {
-        // Conexion a la tabla de Empleados en la DB mediante una instancia de EmpleadoBL
-        EmpleadoBL empleadoBL = new EmpleadoBL();
+        // instancia de Empleado con los datos a guardar
+        Empleado empleado = new Empleado();
+        empleado.IdCargo = 1;
+        empleado.Nombre = "Ramon";
+        empleado.Apellido = "Perez";
+        empleado.Telefono = "12341234";
+        empleado.Clave = "123";
+        // Ejecutar metodo 
+        int resultado = empleadoBL.Guardar(empleado);
 
-        [TestMethod]
-        public void T1_Guardar()
-        {
-            // instancia de Empleado con los datos a guardar
-            Empleado empleado = new Empleado();
-            empleado.IdCargo = 1;
-            empleado.Nombre = "Ramon";
-            empleado.Apellido = "Perez";
-            empleado.Telefono = "12341234";
-            empleado.Clave = "123";
-            // Ejecutar metodo 
-            int resultado = empleadoBL.Guardar(empleado);
+        // Comprobacion de la prueba
+        // si resultado es igual a 1, el Empleado se guardo correctamente
+        Assert.AreEqual(1, resultado);
+    }
 
-            // Comprobacion de la prueba
-            // si resultado es igual a 1, la Empleado se guardo correctamente
-            Assert.AreEqual(1, resultado);
-        }
+    [TestMethod]
+    public void T2_Modificar()
+    {
+        // instancia de Empleado con los datos a modificar
+        Empleado empleado = empleadoBL.ObtenerPorId(1);
+        empleado.IdCargo = 1;
+        empleado.Nombre = "Juan";
+        empleado.Apellido = "Perez";
+        empleado.Telefono = "98001234";
+        empleado.Clave = "123";
+        // Ejecutar metodo
+        int resultado = empleadoBL.Modificar(empleado);
 
-        [TestMethod]
-        public void T2_Modificar()
-        {
-            // instancia de Empleado con los datos a modificar
-            Empleado empleado = empleadoBL.ObtenerPorId(1);
-            empleado.IdCargo = 1;
-            empleado.Nombre = "Juan";
-            empleado.Apellido = "Perez";
-            empleado.Telefono = "98001234";
-            empleado.Clave = "123";
-            // Ejecutar metodo
-            int resultado = empleadoBL.Modificar(empleado);
+        // Comprobacion de la prueba
+        // si resultado es igual a 1, el Empleado se modifico correctamente
+        Assert.AreEqual(1, resultado);
+    }
 
-            // Comprobacion de la prueba
-            // si resultado es igual a 1, la Empleado se modifico correctamente
-            Assert.AreEqual(1, resultado);
-        }
+    [TestMethod]
+    public void T3_Eliminar()
+    {
+        // Buscar el empleado con id = 3
+        Empleado empleado = empleadoBL.ObtenerPorId(3);
+        // Ejecutar metodo		
+        int resultado = empleadoBL.Eliminar(empleado);
 
-        [TestMethod]
-        public void T3_Eliminar()
-        {
-            // Buscar el empleado con id = 3
-            Empleado empleado = empleadoBL.ObtenerPorId(3);
-            // Ejecutar metodo		
-            int resultado = empleadoBL.Eliminar(empleado);
+        // Comprobacion de la prueba
+        // si resultado es igual a 1, el Empleado se elimino correctamente
+        Assert.AreEqual(1, resultado);
+    }
 
-            // Comprobacion de la prueba
-            // si resultado es igual a 1, la Empleado se elimino correctamente
-            Assert.AreEqual(1, 1);
-        }
+    [TestMethod]
+    public void T4_ObtenerPorId()
+    {
+        // Buscar el empleado con id = 1
+        Empleado empleado = empleadoBL.ObtenerPorId(1);
 
-        [TestMethod]
-        public void T4_ObtenerPorId()
-        {
-            // Buscar el empleado con id = 1
-            Empleado empleado = empleadoBL.ObtenerPorId(1);
+        // Comprobacion de la prueba
+        // si el Id de Empleado es diferente de 0, el Empleado se obtuvo por Id correctamente
+        Assert.AreNotEqual(0, empleado.IdEmpleado);
+    }
 
-            // Comprobacion de la prueba
-            // si el Id de Empleado es diferente de 0, la Empleado se obtuvo por Id correctamente
-            Assert.AreNotEqual(0, empleado.IdEmpleado);
-        }
+    [TestMethod]
+    public void T5_Buscar()
+    {
+        // Aplicar filtro de busqueda por Nombre
+        List<Empleado> lista = empleadoBL.Buscar(new Empleado { Nombre = "Juan" });
 
-        [TestMethod]
-        public void T5_Buscar()
-        {
-            List<Empleado> lista = empleadoBL.Buscar(new Empleado { Nombre = "Juan" });
-
-            // Comprobacion de la prueba
-            // si el total de la lista es diferente de 0, las Empleado se buscaron correctamente
-            Assert.AreNotEqual(0, lista.Count);
-        }
+        // Comprobacion de la prueba
+        // si el total de la lista es diferente de 0, la busqueda de Empleado esta correcta
+        Assert.AreNotEqual(0, lista.Count);
     }
 }
 ```
