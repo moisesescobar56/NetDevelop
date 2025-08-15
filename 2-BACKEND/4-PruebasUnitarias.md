@@ -19,45 +19,37 @@ Puede escribir primero pruebas unitarias como código. Luego, ejecute ese códig
 
 <img width="1413" height="888" alt="image" src="https://github.com/user-attachments/assets/a97199cc-98c9-43cd-8f5e-1e87f883e661" />
 
+**Paso 2:** En la opcion **"Prueba/Test"** , seleccionar el tipo **"Clase de prueba de MSTest"**.
 
-**Paso 2:** Dar clic derecho sobre el archivo **UnitTest1.cs** y seleccionar **Cambiar nombre**.
+<img width="1410" height="887" alt="image" src="https://github.com/user-attachments/assets/d7feec00-ff4f-4845-9a1c-442114b980fc" />
 
-![image](https://github.com/user-attachments/assets/1a579eef-9773-44c0-a23a-0796f2239206)
+**Paso 3:** Ingresar el nombre **“EmpleadoUnitTest.cs”** y dar clic en **Agregar**. 
 
-
-**Paso 3:** Ingresar el nombre **“EmpleadoUnitTest.cs”** y pulsar la tecla Enter. 
-
-![image](https://github.com/user-attachments/assets/23eaa2da-5ddc-4427-893d-b3370f8b4719)
-
-**Paso 4:** En el siguiente cuadro de dialogo seleccionar **"Si"**. Para que cambie en todas las referencias el 
-nombre del archivo. 
-
-![image](https://github.com/user-attachments/assets/be69a2ac-e0cb-4694-93df-4cb4a4923262)
+<img width="1412" height="888" alt="image" src="https://github.com/user-attachments/assets/2a76ff5e-9cc6-42ad-911f-aac16e32a31b" />
 
 **Resultado:**
 
-![image](https://github.com/user-attachments/assets/c167e46a-04c5-4660-9fa1-8afaac4a3da0)
+<img width="1413" height="888" alt="image" src="https://github.com/user-attachments/assets/5bc22882-5263-41c6-9864-4668bef355d5" />
 
 
-**Paso 5:** Agregar las **referencias a bibliotecas** para acceder a la tabla Empleado en la base de datos 
-desde el archivo “EmpleadoUnitTest.cs”.
+**Paso 4:** Agregar las **referencias a bibliotecas** para acceder a la tabla Empleado en la base de datos 
+desde el archivo **“EmpleadoUnitTest.cs”**.
 
 ```csharp
 // Referencias
-using System.Collections.Generic;
-// Referencias del proyecto
 using SistemaElParaisal.EN;
 using SistemaElParaisal.BL;
 ```
 
-![image](https://github.com/user-attachments/assets/d0aeb952-13ee-4ef3-88ae-797665698028)
+<img width="1413" height="888" alt="image" src="https://github.com/user-attachments/assets/8856a88b-f59c-41da-91a8-4af58efc15f2" />
 
-**Paso 6:** Borrar el método TestMethod1 del archivo **“CargoUnitTest.cs”**.
+**Paso 6:** Borrar el método TestMethod1 del archivo **“EmpleadoUnitTest.cs”**.
 
-![image](https://github.com/user-attachments/assets/87a0f018-8f64-4aee-a08e-04c288c986f1)
+<img width="1413" height="888" alt="image" src="https://github.com/user-attachments/assets/b9e13878-7a31-4a53-b5d3-9157f9b15c55" />
 
 **Resultado:**
-![image](https://github.com/user-attachments/assets/097406ec-4783-4a83-9d73-4d6371a41455)
+<img width="1413" height="888" alt="image" src="https://github.com/user-attachments/assets/557565b1-af3b-450d-8609-fb81f3b6946a" />
+
 
 ## PARTE 2 - Programación de métodos de prueba en “EmpleadoUnitTest.cs” 
 
@@ -65,12 +57,13 @@ using SistemaElParaisal.BL;
 
 **Paso 1:** Agregar la instancia a la clase **EmpleadoBL** para acceder a la tabla Empleados de la base de  datos.
 ```csharp
-// Conexion a la tabla de Empleados en la DB mediante una instancia de EmpleadoBL
+// Conexion a tabla de Empleados en la DB desde una nueva instancia de EmpleadoBL
 EmpleadoBL empleadoBL = new EmpleadoBL();
 ```
-![image](https://github.com/user-attachments/assets/6a6e4945-0135-4470-9125-4e0b416789de)
+<img width="1413" height="888" alt="image" src="https://github.com/user-attachments/assets/bd06bc81-cfe4-4438-ab97-db3bb2dab23e" />
 
-**Paso 2:** Programar el **[TestMethod]** para comprobar el funcionamiento del método **Guardar**
+
+**Paso 2:** Programar el **[TestMethod]** para verificar el funcionamiento del método **Guardar**
 de EmpleadoBL. 
 ```csharp
 [TestMethod]
@@ -87,14 +80,21 @@ public void T1_Guardar()
     int resultado = empleadoBL.Guardar(empleado);
 
     // Comprobacion de la prueba
-    // si resultado es igual a 1, la Empleado se guardo correctamente
+    // si resultado es igual a 1, el Empleado se guardo correctamente
     Assert.AreEqual(1, resultado);
 }
 ```
 
-![image](https://github.com/user-attachments/assets/841adca7-1842-43e8-96f0-5a15be922aa4)
+<img width="1413" height="888" alt="image" src="https://github.com/user-attachments/assets/9168c550-e520-4825-8656-b4ab0101d4ca" />
 
-**Paso 3:** Programar el **[TestMethod]** para comprobar el funcionamiento del método **Modificar**
+---
+**NOMENCLATURA USADA**
+La configuracion del nombre de las pruebas unitarias es conformado por la siguiente estructura: 
+
+**"T"** + ***"Numero de prueba"*** + **"_"** + ***"Metodo a probar"*** 
+---
+
+**Paso 3:** Programar el **[TestMethod]** para verificar el funcionamiento del método **Modificar**
 de EmpleadoBL. 
 ```csharp
 [TestMethod]
@@ -111,15 +111,16 @@ public void T2_Modificar()
     int resultado = empleadoBL.Modificar(empleado);
 
     // Comprobacion de la prueba
-    // si resultado es igual a 1, la Empleado se modifico correctamente
+    // si resultado es igual a 1, el Empleado se modifico correctamente
     Assert.AreEqual(1, resultado);
 }
 ```
 
-![image](https://github.com/user-attachments/assets/ec598dfd-cfb1-42b6-b92f-42e189dd9225)
+<img width="1413" height="888" alt="image" src="https://github.com/user-attachments/assets/2bc9812a-e385-4b60-865d-84a6eeaadd0a" />
 
 
-**Paso 4:** Programar el **[TestMethod]** para comprobar el funcionamiento del método **Eliminar**
+
+**Paso 4:** Programar el **[TestMethod]** para verificar el funcionamiento del método **Eliminar**
 de EmpleadoBL. 
 ```csharp
 [TestMethod]
@@ -131,14 +132,15 @@ public void T3_Eliminar()
     int resultado = empleadoBL.Eliminar(empleado);
 
     // Comprobacion de la prueba
-    // si resultado es igual a 1, la Empleado se elimino correctamente
-    Assert.AreEqual(1, 1);
+    // si resultado es igual a 1, el Empleado se elimino correctamente
+    Assert.AreEqual(1, resultado);
 }
 ```
 
-![image](https://github.com/user-attachments/assets/315581a2-d048-4285-87d8-64e7bf34229c)
+<img width="1413" height="888" alt="image" src="https://github.com/user-attachments/assets/45b9cd91-3a14-423e-a79f-0a02a69de8b9" />
 
-**Paso 5:** Programar el **[TestMethod]** para comprobar el funcionamiento del método **ObtenerPorId**
+
+**Paso 5:** Programar el **[TestMethod]** para verificar el funcionamiento del método **ObtenerPorId**
 de EmpleadoBL. 
 ```csharp
 [TestMethod]
@@ -148,39 +150,41 @@ public void T4_ObtenerPorId()
     Empleado empleado = empleadoBL.ObtenerPorId(1);
 
     // Comprobacion de la prueba
-    // si el Id de Empleado es diferente de 0, la Empleado se obtuvo por Id correctamente
+    // si el Id de Empleado es diferente de 0, el Empleado se obtuvo por Id correctamente
     Assert.AreNotEqual(0, empleado.IdEmpleado);
 }
 ```
 
-![image](https://github.com/user-attachments/assets/5f073794-914a-47ba-b855-3c7484790353)
+<img width="1413" height="888" alt="image" src="https://github.com/user-attachments/assets/bffc5936-e95f-4cff-86eb-3686a54e4e60" />
 
 
-**Paso 6:** Programar el **[TestMethod]** para comprobar el funcionamiento del método **Buscar**
+**Paso 6:** Programar el **[TestMethod]** para verificar el funcionamiento del método **Buscar**
 de EmpleadoBL. 
 ```csharp
 [TestMethod]
 public void T5_Buscar()
 {
+	// Aplicar filtro de busqueda por Nombre
     List<Empleado> lista = empleadoBL.Buscar(new Empleado { Nombre = "Juan" });
 
     // Comprobacion de la prueba
-    // si el total de la lista es diferente de 0, las Empleado se buscaron correctamente
+    // si el total de la lista es diferente de 0, la busqueda de Empleado esta correcta
     Assert.AreNotEqual(0, lista.Count);
 }
 ```
 
-![image](https://github.com/user-attachments/assets/6ca6e2fc-997f-4034-9c88-ca7bf942f90b)
+<img width="1413" height="887" alt="image" src="https://github.com/user-attachments/assets/9307198e-a9f5-4cf2-83cf-8e8eddeae652" />
+
 
 
 ## PARTE 3 - Configuración de archivo “CargoUnitTest.cs”
 
-**Paso 1:** Seleccionar el proyecto **“SistemaElParaisal.PruebasUnitarias”**, dar clic derecho y seleccionar 
-**Agregar > Prueba Unitaria**.
+**Paso 1:** Seleccionar el proyecto **“SistemaElParaisal.Pruebas”**, dar clic derecho y seleccionar 
+**Agregar > Nuevo elemento**.
 
-![image](https://github.com/user-attachments/assets/cebf6194-4392-4147-8099-50b20d0a087f)
+<img width="1413" height="888" alt="image" src="https://github.com/user-attachments/assets/a97199cc-98c9-43cd-8f5e-1e87f883e661" />
 
-**Paso 2:** Dar clic derecho sobre el archivo **UnitTest1.cs** y seleccionar **Cambiar nombre**.
+**Paso 2:** En la opcion **"Prueba/Test"** , seleccionar el tipo **"Clase de prueba de MSTest"**.
 
 ![image](https://github.com/user-attachments/assets/68901003-53b5-4258-a0fb-09ca8e981ee4)
 
@@ -202,8 +206,6 @@ desde el archivo **“CargoUnitTest.cs”**.
 
 ```csharp
 // Referencias
-using System.Collections.Generic;
-// Referencias del proyecto
 using SistemaElParaisal.EN;
 using SistemaElParaisal.BL;
 ```
@@ -228,7 +230,7 @@ CargoBL cargoBL = new CargoBL();
 ```
 ![image](https://github.com/user-attachments/assets/a2374c10-07b6-43e4-84d7-51c2000382f9)
 
-**Paso 2:** Programar el **[TestMethod]** para comprobar el funcionamiento del método **ObtenerPorId**
+**Paso 2:** Programar el **[TestMethod]** para verificar el funcionamiento del método **ObtenerPorId**
 de **CargoBL**. 
 
 ```csharp
@@ -245,11 +247,7 @@ public void T1_ObtenerPorId()
 ```
 ![image](https://github.com/user-attachments/assets/3319ccab-d58c-403a-8907-81183120b833)
 
-**NOTA:** La configuracion del nombre de las pruebas unitarias es conformado por la siguiente estructura: 
-
-**"T"** + ***"Numero de prueba"*** + **"_"** + ***"Metodo a probar"*** 
-
-**Paso 3:** Programar el **[TestMethod]** para comprobar el funcionamiento del método **Buscar** de 
+**Paso 3:** Programar el **[TestMethod]** para verificar el funcionamiento del método **Buscar** de 
 **CargoBL**.
 ```csharp
 [TestMethod]
