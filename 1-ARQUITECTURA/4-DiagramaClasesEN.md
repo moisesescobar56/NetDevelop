@@ -110,7 +110,7 @@ namespace SistemaElParaisal.EN
     public class Empleado
     {
         public short IdEmpleado { get; set; }
-        public short IdCargo { get; set; } // FK
+        public byte IdCargo { get; set; } // FK
         public string Nombre { get; set; } = string.Empty;
         public string Apellido { get; set; } = string.Empty;
         public string Telefono { get; set; } = string.Empty;
