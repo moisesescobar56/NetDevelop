@@ -16,17 +16,16 @@ En todo proyecto **el equipo de desarrollo deben seguir convenciones** para tene
 - ViewModels
 - ToolsForms.cs
 
-## Ver tutorial: https://youtu.be/8F7qcFjpcFY
+## Ver tutorial: [https://youtu.be/8F7qcFjpcFY](https://youtu.be/XbnnO9nBeb4)
 
 **Resultado:**
-![image](https://github.com/user-attachments/assets/7b916c41-6c11-4350-b11f-ca17ca008d96)
+<img width="1413" height="857" alt="image" src="https://github.com/user-attachments/assets/e1c7a48b-2dc6-4534-9519-33adba107004" />
 
-**NOTA:** en el video se crean los formularios ***"AdminClienteForm.cs"*** y ***"RegistroClienteForm.cs"***, pero en la practica se eliminaron, debido a que no se desarrollaran en esta guia. 
 
 ## PARTE 2 - Configuracion de la clase ***"ToolsForms.cs"***
 **Paso 1:** abrir la clase **"ToolsForms.cs"**.
 
-![image](https://github.com/user-attachments/assets/c668ebe5-8fa1-4392-a69e-528907784023)
+<img width="1413" height="857" alt="image" src="https://github.com/user-attachments/assets/a19a9c08-9445-4001-a3ba-f2216563dae5" />
 
 **Paso 2:** agregar los using de las referencias de las bibliotecas a utilizar.
 ```csharp
@@ -34,7 +33,8 @@ En todo proyecto **el equipo de desarrollo deben seguir convenciones** para tene
 using System.Windows.Forms;
 ```
 
-![image](https://github.com/user-attachments/assets/0240ecf2-abb8-4136-a998-1341b2b2c3b9)
+<img width="1413" height="857" alt="image" src="https://github.com/user-attachments/assets/c8919d06-8449-4e52-bf97-ffb532ad19df" />
+
 
 **Paso 3:** programar los metodos de las herramientas a implementar en la clase **"ToolsForms.cs"**.
 ```csharp
@@ -59,16 +59,19 @@ public static DialogResult MessageBoxConfirmar()
     return MessageBox.Show("¿Desea eliminar el registro seleccionado?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 }
 ```
-![image](https://github.com/user-attachments/assets/4fb100c5-4c0f-470f-9920-1e251fc77284)
+**Resultado:**
+<img width="1647" height="857" alt="image" src="https://github.com/user-attachments/assets/9b81c579-685a-4500-b91a-5df613adacd1" />
+
 
 **Paso 4:** minimizar o contraer la clase **"ToolsForms.cs"**.
 
-![image](https://github.com/user-attachments/assets/b47ffbe7-15a9-45aa-ac47-e73e5f936e1e)
+<img width="1647" height="857" alt="image" src="https://github.com/user-attachments/assets/ed976bdd-6a2a-4ca3-82fe-0ce81d92db6b" />
 
 **Resultado:** ubircarse al final del codigo del archivo.
-![image](https://github.com/user-attachments/assets/966091be-edc5-42a2-a984-169461b6c79d)
 
-**Paso 5:** codificar una nuevo espacio de nombres, llamado **"ToolsForms"** y agregar un metodo extensivo de validacion para controles **"TextBox"** y **"ComboBox"** a la clase ***"ErrorProvider"*** nativa de .NET Framework
+<img width="1647" height="857" alt="image" src="https://github.com/user-attachments/assets/02d161bf-4cc1-4757-b19e-7b8581403bea" />
+
+**Paso 5:** codificar una nuevo espacio de nombres, llamado **"ToolsForms"** y agregar un metodo extensivo de validacion para controles **"TextBox"** y **"ComboBox"** a la clase ***"ErrorProvider"*** nativa de .NET
 
 ```csharp
 namespace ToolsForms
@@ -106,7 +109,8 @@ namespace ToolsForms
 
 **Resultado:**
 
-![image](https://github.com/user-attachments/assets/f174cc32-eb26-4687-835a-19c9a7784306)
+<img width="1580" height="920" alt="image" src="https://github.com/user-attachments/assets/c5fac415-e07c-4bf7-b0a6-7c3b25941ac5" />
+
 
 **NOTA:** una vez configurada esta seccion de la guia, se puede avanzar en el diseño de los formularios.
 
