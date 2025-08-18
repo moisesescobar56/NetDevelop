@@ -4,7 +4,8 @@
 
 **Paso 1:** Abrir el formulario **"AdminEmpleadoFrom.cs"** desde el Explorador de Soluciones.
 
-![image](https://github.com/user-attachments/assets/4ddd6bd2-c139-4054-ba62-cfda5652089b)
+<img width="1378" height="808" alt="image" src="https://github.com/user-attachments/assets/515c9862-408f-4d10-bb92-37c90ea3cf38" />
+
 
 **Paso 2:** Diseñar el formulario **"AdminEmpleadoFrom.cs"** en base a la siguiente imagen.
 
@@ -12,4 +13,5 @@
 
 **Resultado: "AdminEmpleadoFrom.cs"**
 
-![image](https://github.com/user-attachments/assets/81bae8d8-6fbc-458b-b753-2b51d16df748)
+<img width="1290" height="797" alt="image" src="https://github.com/user-attachments/assets/5e612c5a-7f34-4cc6-b981-862651699b33" />
+
