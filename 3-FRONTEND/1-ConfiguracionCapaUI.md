@@ -1,5 +1,12 @@
 # CONFIGURACIÓN CAPA UI EN WINDOWS FORMS
+
+En todo proyecto **el equipo de desarrollo deben seguir convenciones** para tener **nombres de archivos estandarizados**, por ello es importante definir la nomenclatura y estandar a utilizar. Por comodidad en el **desarrollo .NET** se sigue las reglas del **estandar PasCal**, recomendado por Microsoft, que lo implementa en sus librerias y Frameworks. 
+
+<img width="960" height="540" alt="image" src="https://github.com/user-attachments/assets/1eaab0ef-96ec-4eda-a229-dc9f73d9e62e" />
+
+
 ## PARTE 1 - Creacion y configuracion de formularios, carpetas y clases
+
 **Paso 1:** Abrir Visual Studio y Configurar los siguientes archivos:
 - Administracion
   - AdminEmpleadoForm.cs
