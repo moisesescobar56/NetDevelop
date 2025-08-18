@@ -3,7 +3,7 @@
 ## PARTE 1 - Diseñar el formulario **"RegistroEmpleadoFrom.cs"**
 **Paso 1:** Abrir el formulario **"RegistroEmpleadoFrom.cs"** desde el Explorador de Soluciones.
 
-![image](https://github.com/user-attachments/assets/c5180b0f-08bd-4581-ab0e-018e5ac14ffc)
+<img width="1378" height="808" alt="image" src="https://github.com/user-attachments/assets/eedbcd8a-53d2-4f81-989a-ade3e7b8b104" />
 
 **Paso 2:** Diseñar el formulario **"RegistroEmpleadoFrom.cs"** en base a la siguiente imagen.
 
@@ -11,5 +11,6 @@
 
 **Resultado: "ResultadoEmpleadoFrom.cs"**
 
-![image](https://github.com/user-attachments/assets/fd5e0f23-2418-4495-8b4f-a2ac6821a7f2)
+<img width="1290" height="797" alt="image" src="https://github.com/user-attachments/assets/a24405e0-0b27-4507-ad7f-c433fb888cc2" />
+
 
