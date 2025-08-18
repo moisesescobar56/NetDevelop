@@ -1,49 +1,59 @@
 # Programación de funcionalidad GUARDAR
 
 ## PARTE 1 - Programación del boton NUEVO
+
 **Paso 1:** Abrir el formulario "AdminEmpleadoForm.cs".
 
-![image](https://github.com/user-attachments/assets/214b7ef7-e17a-4143-92e9-27898ad64d7c)
+<img width="1378" height="881" alt="image" src="https://github.com/user-attachments/assets/70c8db75-bda9-46a4-8743-8efc9e9afbf5" />
+
 
 **Paso 2:** dar doble clic sobre el boton **"NUEVO"** para generar el “Evento Click”
 
-![image](https://github.com/user-attachments/assets/0cf8db99-dc62-4e72-b7ba-70b297d06b6f)
+<img width="1378" height="881" alt="image" src="https://github.com/user-attachments/assets/3157b480-51e2-470e-91c6-ebcb9d25f585" />
 
 **Resultado:**
-![image](https://github.com/user-attachments/assets/002be4e1-f887-4b23-ae23-ad7f1dfce22e)
+
+<img width="1378" height="881" alt="image" src="https://github.com/user-attachments/assets/ec01ea54-1046-40fa-a844-d1ef0868158b" />
 
 **Paso 3:** Programar la lógica para abrir el formulario **“RegistroEmpleadoForm.cs”**
 ```csharp
 // Abrir formulario para registrar un nuevo cliente 
-RegistroEmpleadoForm frmResigistro = new RegistroEmpleadoForm();
-frmResigistro.ShowDialog();
+RegistroEmpleadoForm frmRegistro = new RegistroEmpleadoForm();
+frmRegistro.ShowDialog();
 ```
+**Resultado:**
 
-![image](https://github.com/user-attachments/assets/a9263d86-be4e-4c72-a731-2e2cf196add2)
+<img width="1378" height="881" alt="image" src="https://github.com/user-attachments/assets/b42880bf-7de7-41e7-86e5-a7725df2cbd5" />
 
 ## PARTE 2 - Codificacion de ComboBox y Load
 **Paso 1:** Abrir el formulario **"RegistroEmpleadoForm.cs"**.
 
-![image](https://github.com/user-attachments/assets/db804307-c140-44fc-afd9-2ca0712604f7)
+<img width="1378" height="881" alt="image" src="https://github.com/user-attachments/assets/01b66ff3-b814-42ef-9bf2-114ccd13c67c" />
 
 **Paso 2:** Agregar un ErrorProvider al formulario, arrastrándolo y dejándolo caer en el Diseño del formulario “RegistroEmpleadoForm.cs” 
 
-![image](https://github.com/user-attachments/assets/79ce254b-03f7-490e-bf61-dd5e01e723ff)
+<img width="1378" height="881" alt="image" src="https://github.com/user-attachments/assets/00e01158-cb48-4ea3-a209-486bc1d98eab" />
 
-**Paso 3:** Cambiar el nombre del “errorProvider1” a **“errorProvider”** en la ventana de Propiedades.
+**Resultado:**
 
-![image](https://github.com/user-attachments/assets/acd75045-034d-4af6-b8ee-d87a978f41cb)
+<img width="1378" height="881" alt="image" src="https://github.com/user-attachments/assets/6df3ff12-695f-4fa6-9021-09cd3be62e1e" />
+
+
+**Paso 3:** Cambiar el nombre del “errorProvider1” a **“errorProvider”** en la ventana de **Propiedades**.
+
+<img width="1378" height="881" alt="image" src="https://github.com/user-attachments/assets/8ddd9a46-1cb2-4853-be79-2a03cc3f4241" />
 
 **Paso 4:** Seleccionar el formulario “RegistroEmpleadoForm.cs” en el diseño y en la ventana de propiedades, seleccionar la opción **Eventos**.
 
-![image](https://github.com/user-attachments/assets/663c9dbe-9ebd-4a73-8f0f-35c097bbaa32)
+<img width="1378" height="881" alt="image" src="https://github.com/user-attachments/assets/57515e00-30b0-4257-b3a6-c757cf0f624e" />
 
-**Paso 5:** Generar el evento Load del formulario, dando doble click en la opción Load. 
+**Paso 5:** Generar el evento Load del formulario, dando doble click en la opción **Load**. 
 
-![image](https://github.com/user-attachments/assets/5b1e5000-6bf6-4023-8f55-8c5f169b459b)
+<img width="1378" height="881" alt="image" src="https://github.com/user-attachments/assets/cbb86001-7f84-4f4e-a9ed-550f4b2289c3" />
 
 **Resultado**
-![image](https://github.com/user-attachments/assets/b36f2d19-abb9-41e9-a386-0c1b8a515d1f)
+
+<img width="1378" height="881" alt="image" src="https://github.com/user-attachments/assets/46b375f8-0078-4447-b5b3-4efcc468cc64" />
 
 **Paso 6:** Agregar referencias a bibliotecas en el formulario.
 ```csharp
@@ -53,21 +63,27 @@ using SistemaElParaisal.BL;
 // Extension de metodos
 using ToolsForms;
 ```
-![image](https://github.com/user-attachments/assets/1595b46b-9e7b-4790-8aff-be567cf53dc4)
+**Resultado:**
+
+<img width="1378" height="881" alt="image" src="https://github.com/user-attachments/assets/b0a05caf-6890-4189-9dbf-3fa94ba92fe0" />
 
 **Paso 7:** Agregar conexión a la base de datos mediante instancia a la clase **EmpleadoBL**. 
 ```csharp
 // Conexion a la tabla de Empleados en la DB
 EmpleadoBL empleadoBL = new EmpleadoBL();
 ```
-![image](https://github.com/user-attachments/assets/4081210e-5c66-4f29-8c64-206696a29d35)
+
+**Resultado:**
+
+<img width="1378" height="881" alt="image" src="https://github.com/user-attachments/assets/c57e0f7a-cbdb-4efc-a158-ce7ada5a98be" />
+
 
 **Paso 8:** Agregar a la lógica la variable “idEmpleado” para almacenar la llave primaria de cualquier registro de "Empleado" que se desee modificar. Debe **asignar el mismo tipo de dato** a como en esta en la **EN**.
 ```csharp
 // Variables
 public short idEmpleado = 0; // variable del mismo tipo que la PK
 ```
-![image](https://github.com/user-attachments/assets/165cb33b-8e79-4c64-97e4-a0811c69fd2a)
+<img width="1378" height="881" alt="image" src="https://github.com/user-attachments/assets/e7f5cfaa-aefc-4d94-8539-149b5788f6d0" />
 
 **Paso 9:** Programar la lógica del método interno **"CargarCargos()"** que nos permitirá mostrar en forma de lista de selección las cargos en un formulario.
 ```csharp
@@ -90,7 +106,7 @@ public void CargarCargos()
 }
 ```
 
-![image](https://github.com/user-attachments/assets/11edff1d-8ed1-4586-8887-92c935525fc5)
+<img width="1378" height="881" alt="image" src="https://github.com/user-attachments/assets/ca895518-bf73-44f5-a979-f2e212d6b947" />
 
 **Paso 10:** Codificar la lógica del evento Load.
 ```csharp
@@ -112,16 +128,16 @@ if (idEmpleado > 0)
     this.Text = "Editar Empleado"; // titulo del formulario
 }
 ```
-![image](https://github.com/user-attachments/assets/b161703f-1ad3-4046-b561-34a9f3df20dc)
+<img width="1378" height="889" alt="image" src="https://github.com/user-attachments/assets/c7db9c6c-33a3-46be-89e4-7f59f0c89e17" />
 
 **Paso 11:** Iniciar la aplicacion.
 ![image](https://github.com/user-attachments/assets/c44bad4d-30e8-452e-bc00-594b96ab4a43)
 
 **Paso 12:** Dar clic en **NUEVO**.
-![image](https://github.com/user-attachments/assets/4f0e5fd4-9e7d-453d-9bfa-ad798d9f825f)
+<img width="1378" height="889" alt="image" src="https://github.com/user-attachments/assets/e7e0f642-6977-45ba-92cc-b3d1c4eeae61" />
 
 **Resultado:** Verificar que se cargue la lista de desplegable **Cargos**.
-![image](https://github.com/user-attachments/assets/d4358df2-a637-4a4a-ad1a-9faf9eb50809)
+<img width="1378" height="889" alt="image" src="https://github.com/user-attachments/assets/de5e3359-6a53-4b09-9590-320b5ee3b373" />
 
 **Paso 12:** Detener la aplicacion.
 ![image](https://github.com/user-attachments/assets/56e319f1-4420-4a3d-9c4f-e72252c891c3)
@@ -130,24 +146,25 @@ if (idEmpleado > 0)
 
 **Paso 1:** Dar doble clic sobre el botón **"cancelarButton"**, para generar el evento **click**. 
 
-![image](https://github.com/user-attachments/assets/c02aa937-b678-4c9e-80ba-e10f42133b1c)
+<img width="1378" height="730" alt="image" src="https://github.com/user-attachments/assets/3fd1bedc-5e4b-4094-80f3-9d70270fb8ea" />
 
 **Resultado:**
-![image](https://github.com/user-attachments/assets/deb6c81f-aece-46f5-9736-d29e5cbd30bf)
+<img width="1378" height="847" alt="image" src="https://github.com/user-attachments/assets/59e6cc25-8af0-4d95-9ee2-f8632c8d40e2" />
 
 **Paso 2:** Codificar la lógica del botón **CANCELAR**. 
 ```csharp
 // this = Formulario actual y Close() = evento para cerrar un formulario
 this.Close();
 ```
-![image](https://github.com/user-attachments/assets/c21d1362-8c1b-4efb-8cb2-5baf7c2ce755)
+
+<img width="1378" height="847" alt="image" src="https://github.com/user-attachments/assets/c6693f93-ab6f-4389-9e0a-7ad210709d5f" />
 
 **Paso 3:** Dar doble clic sobre el botón **"guardarButton"**, para generar el evento click.
 
-![image](https://github.com/user-attachments/assets/b07387e1-6a3a-4cad-9455-9749bac82741)
+<img width="1378" height="847" alt="image" src="https://github.com/user-attachments/assets/d7624fdc-581e-4849-9b2a-a01b2e3b1c33" />
 
 **Resultado:**
-![image](https://github.com/user-attachments/assets/245d9d6d-b338-45b9-bdc1-757639daf51c)
+<img width="1378" height="847" alt="image" src="https://github.com/user-attachments/assets/3a9d8586-0c93-4340-bcad-2feaadcb5498" />
 
 **Paso 4:** Programar método interno **"ValidarControles"** para validar que el usuario complete los campos obligatorios del formulario. 
 ```csharp
@@ -169,7 +186,7 @@ return datosValidos;
 }
 ```
 
-![image](https://github.com/user-attachments/assets/8ea99a76-7f24-4f1f-9749-dabd96e1a8b2)
+<img width="1674" height="1000" alt="image" src="https://github.com/user-attachments/assets/d701506d-7d6e-4585-8c56-c9cb33d1988b" />
 
 ### IMPLEMENTACION DE EXTENSION DE ERROR PROVIDER
 
@@ -199,7 +216,7 @@ catch (Exception ex)
     MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 }
 ```
-![image](https://github.com/user-attachments/assets/160106fb-107d-40cc-805d-a211af3aaad7)
+<img width="1674" height="1000" alt="image" src="https://github.com/user-attachments/assets/349d5eee-7b72-432f-be21-9149ee6074fd" />
 
 **Paso 6:** Agregar a la lógica un if para la validación de campos obligatorios. 
 ```csharp
@@ -208,7 +225,7 @@ if (ValidarControles() == true)
 
 }
 ```
-![image](https://github.com/user-attachments/assets/dc9b85dc-aa56-459a-b6bd-b8d306e7e697)
+<img width="1674" height="1000" alt="image" src="https://github.com/user-attachments/assets/39e9c89a-ad7f-4500-845f-ff9b7582f8f8" />
 
 **Paso 7:** Agregar lógica para obtener los valores en los controles del formulario.
 ```csharp
@@ -220,7 +237,7 @@ empleado.Telefono = telefonoTextBox.Text;
 empleado.Clave = claveTextBox.Text;
 empleado.IdCargo = (byte)cargoComboBox.SelectedValue;
 ```
-![image](https://github.com/user-attachments/assets/9580ba1d-9412-4a61-8253-dfb2e694aba2)
+<img width="1674" height="1000" alt="image" src="https://github.com/user-attachments/assets/eb58faf8-ed8b-41cd-8dbe-75f923805ef3" />
 
 **IMPORTANTE:** la conversion al obtener un valor del comboBox debe ser segun el tipo de dato de la propiedad en la clase.
 
@@ -247,64 +264,69 @@ else
 }
 ```
 
-![image](https://github.com/user-attachments/assets/ade3a058-4893-47dc-b4cf-f874f0f84ab7)
+<img width="1674" height="1000" alt="image" src="https://github.com/user-attachments/assets/8f16b808-3b97-4f5e-a141-9d47d1ff9a45" />
 
 **Metodo completo:**
 ```csharp
-int resultado = 0; // resultado del comando en la DB
-try
-{
-    if (ValidarControles() == true)
-    {
-        // Capturar datos del formulario
-        Empleado empleado = new Empleado(); // instancia de empleado
-        empleado.Nombre = nombreTextBox.Text;
-        empleado.Apellido = apellidoTextBox.Text;
-        empleado.Telefono = telefonoTextBox.Text;
-        empleado.Clave = claveTextBox.Text;
-        empleado.IdCargo = (byte)cargoComboBox.SelectedValue;
+            int resultado = 0; // resultado del comando en la DB
+            try
+            {
+                if (ValidarControles() == true)
+                {
+                    // Capturar datos del formulario
+                    Empleado empleado = new Empleado(); // instancia de empleado
+                    empleado.Nombre = nombreTextBox.Text;
+                    empleado.Apellido = apellidoTextBox.Text;
+                    empleado.Telefono = telefonoTextBox.Text;
+                    empleado.Clave = claveTextBox.Text;
+                    empleado.IdCargo = (byte)cargoComboBox.SelectedValue;
 
-        if (idEmpleado == 0)
-        {                        
-            resultado = empleadoBL.Guardar(empleado); //Se esta guardando un nuevo empleado
-        }
-        else
-        {                        
-            empleado.IdEmpleado = idEmpleado; 
-            resultado = empleadoBL.Modificar(empleado); //Se esta modificando un empleado existente
-        }
-        // Verficiacion del resultado en la base de datos
-        if (resultado > 0)
-        {
-            MessageBox.Show("Registro guardado exitosamente", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            this.Close();
-        }
-        else
-        {
-            MessageBox.Show("Ocurrio un error, por favor intentelo de nuevo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        }
-    }
-}
-catch (Exception ex)
-{
-    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-}
+                    if (idEmpleado == 0)
+                    {
+                        resultado = empleadoBL.Guardar(empleado); //Se esta guardando un nuevo empleado
+                    }
+                    else
+                    {
+                        empleado.IdEmpleado = idEmpleado;
+                        resultado = empleadoBL.Modificar(empleado); //Se esta modificando un empleado existente
+                    }
+                    // Verficiacion del resultado en la base de datos
+                    if (resultado > 0)
+                    {
+                        MessageBox.Show("Registro guardado exitosamente", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ocurrio un error, por favor intentelo de nuevo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 ```
 
 **Paso 9:** Iniciar la aplicacion.
 ![image](https://github.com/user-attachments/assets/c44bad4d-30e8-452e-bc00-594b96ab4a43)
 
 **Paso 10:** Dar clic en **NUEVO**.
-![image](https://github.com/user-attachments/assets/4f0e5fd4-9e7d-453d-9bfa-ad798d9f825f)
+
+<img width="1378" height="889" alt="image" src="https://github.com/user-attachments/assets/e7e0f642-6977-45ba-92cc-b3d1c4eeae61" />
 
 **Paso 11:** Completar los datos del formulario y dar clic en el boton **"GUARDAR"**
-![image](https://github.com/user-attachments/assets/2b8db17e-ee89-452f-9eac-ac964d44197e)
+
+<img width="1674" height="1000" alt="image" src="https://github.com/user-attachments/assets/6a6528b4-f017-4794-a0a8-775b252ccf19" />
 
 **Paso 12:** Dar clic en **Aceptar** y luego dar clic en el boton **BUSCAR**.
-![image](https://github.com/user-attachments/assets/53ab1e6a-ae22-44b6-9ce4-caa06904864e)
+
+<img width="1674" height="1000" alt="image" src="https://github.com/user-attachments/assets/c786b1ef-dd62-45c1-bb08-ce20b6d55fa3" />
 
 **Resultado:**
-![image](https://github.com/user-attachments/assets/e8adeb29-375e-4635-a378-16929441eee8)
+
+<img width="1674" height="1000" alt="image" src="https://github.com/user-attachments/assets/8145879d-56d6-40e0-8f7f-9f0c67e23341" />
+
 
 **Paso 13:** Detener la aplicacion.
 ![image](https://github.com/user-attachments/assets/56e319f1-4420-4a3d-9c4f-e72252c891c3)
@@ -345,15 +367,6 @@ GO
 
 ## Archivo **RegistroEmpleadoForm.cs**
 ```csharp
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 //Referencias del proyecto
 using SistemaElParaisal.EN;
 using SistemaElParaisal.BL;
@@ -374,25 +387,23 @@ namespace SistemaElParaisal.UI.WinForms
         {
             InitializeComponent();
         }
-
         public void CargarCargos()
         {
             // Conexion a la tabla de Cargo en la DB
-            CargoBL categoriaBL = new CargoBL();
+            CargoBL cargoBL = new CargoBL();
 
             // Inicializar lista 
             List<Cargo> cargos = new List<Cargo>();
             cargos.Add(new Cargo { IdCargo = 0, Nombre = "SELECCIONAR" });
 
             // Obtener lista de Cargos de la DB
-            cargos.AddRange(categoriaBL.Buscar(new Cargo()));
+            cargos.AddRange(cargoBL.Buscar(new Cargo()));
             cargoComboBox.DataSource = cargos;
 
             // Configurar texto y valor de la lista de seleccion
             cargoComboBox.DisplayMember = "Nombre";
             cargoComboBox.ValueMember = "IdCargo";
         }
-
         private void RegistroEmpleadoForm_Load(object sender, EventArgs e)
         {
             //Cargar ComboBoxs en el formulario
@@ -436,7 +447,6 @@ namespace SistemaElParaisal.UI.WinForms
             }
             return datosValidos;
         }
-
         private void guardarButton_Click(object sender, EventArgs e)
         {
             int resultado = 0; // resultado del comando en la DB
@@ -453,12 +463,12 @@ namespace SistemaElParaisal.UI.WinForms
                     empleado.IdCargo = (byte)cargoComboBox.SelectedValue;
 
                     if (idEmpleado == 0)
-                    {                        
+                    {
                         resultado = empleadoBL.Guardar(empleado); //Se esta guardando un nuevo empleado
                     }
                     else
-                    {                        
-                        empleado.IdEmpleado = idEmpleado; 
+                    {
+                        empleado.IdEmpleado = idEmpleado;
                         resultado = empleadoBL.Modificar(empleado); //Se esta modificando un empleado existente
                     }
                     // Verficiacion del resultado en la base de datos
