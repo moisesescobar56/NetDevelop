@@ -1,11 +1,16 @@
 # Programación de funcionalidad BUSCAR
 
 ## PARTE 1 - Configurar Referencias y Conexión
-**Paso 1:** Seleccionar el formulario y en la ventana de Propiedades dar clic sobre el menú de **Eventos**. 
+
+**Paso 1:** Abrir el formulario "AdminEmpleadoForm.cs".
+
+<img width="1378" height="808" alt="image" src="https://github.com/user-attachments/assets/f17099fe-b203-4fdc-a3af-b6d00fb62637" />
+
+**Paso 2:** Seleccionar el formulario y en la ventana de Propiedades dar clic sobre el menú de **Eventos**. 
 
 <img width="1378" height="808" alt="image" src="https://github.com/user-attachments/assets/c605e645-e756-4a18-beaa-26333e48b46d" />
 
-**Paso 2:** En el evento Load dar doble clic en el espacio en blanco para generar el evento Load del 
+**Paso 3:** En el evento Load dar doble clic en el espacio en blanco para generar el evento Load del 
 formulario.
 
 <img width="1378" height="808" alt="image" src="https://github.com/user-attachments/assets/4339b7f9-b6ca-4133-affd-49925f851a61" />
@@ -15,7 +20,7 @@ formulario.
 <img width="1378" height="808" alt="image" src="https://github.com/user-attachments/assets/67423dca-8a8c-4c72-9c63-426fbbee5b67" />
 
 
-**Paso 3:** Agregar referencias a librerías en el formulario.
+**Paso 4:** Agregar referencias a librerías en el formulario.
 ```csharp
 //Referencias
 using SistemaElParaisal.EN;
@@ -24,7 +29,7 @@ using SistemaElParaisal.BL;
 <img width="1378" height="808" alt="image" src="https://github.com/user-attachments/assets/57459406-271e-45b0-9b2e-e990678e011e" />
 
 
-**Paso 4:** Agregar crear conexión a la base de datos mediante EmpleadoBL y agregar variable “lista” para cargar los empleados en el DataGridView. 
+**Paso 5:** Agregar crear conexión a la base de datos mediante EmpleadoBL y agregar variable “lista” para cargar los empleados en el DataGridView. 
 ```csharp
 // Conexion a la tabla de Empleados en la DB
 EmpleadoBL empleadoBL = new EmpleadoBL();
