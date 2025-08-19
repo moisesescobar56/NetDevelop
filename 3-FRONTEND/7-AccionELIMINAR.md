@@ -49,7 +49,8 @@ else
     MessageBox.Show("Ocurrio un error, por favor intente de nuevo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 }
 ```
-![Uploading image.png…]()
+**Resultado:**
+<img width="1616" height="1040" alt="image" src="https://github.com/user-attachments/assets/78f1435f-3e57-442d-8a2b-30169077a262" />
 
 **Paso 5:** Iniciar la aplicacion.
 ![image](https://github.com/user-attachments/assets/c44bad4d-30e8-452e-bc00-594b96ab4a43)
