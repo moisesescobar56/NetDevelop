@@ -3,14 +3,14 @@
 ## PARTE 1 - Programación de Accion EDITAR
 **Paso 1:** Ir al **Explorador de soluciones** y dar doble clic sobre el archivo **“AdminEmpleadoForm.cs”**. 
 
-![image](https://github.com/user-attachments/assets/2a555a96-267d-481c-856a-91c636083c0c)
+<img width="1378" height="881" alt="image" src="https://github.com/user-attachments/assets/70c8db75-bda9-46a4-8743-8efc9e9afbf5" />
 
 **Paso 2:** Dar doble clic sobre el botón **"editarButton"**, para generar el **evento click**. 
 
-![image](https://github.com/user-attachments/assets/a142cd27-2438-4586-9f42-12d206901b37)
+<img width="1289" height="817" alt="image" src="https://github.com/user-attachments/assets/7f7c8bf8-2f28-489c-b7d7-cc1d12415cf5" />
 
 **Resultado:**
-![image](https://github.com/user-attachments/assets/7cd35332-c620-4091-b50f-2e21b45a3c7a)
+<img width="1289" height="817" alt="image" src="https://github.com/user-attachments/assets/38b9750f-dddd-49e3-a230-00bacd170f65" />
 
 **Paso 3:** Agregar lógica del botón **EDITAR**, en el evento **editarButton_Click**.
 ```csharp
@@ -31,7 +31,8 @@ else
     MessageBox.Show("Primero debe seleccionar el registro que desea editar", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
 }
 ```
-![image](https://github.com/user-attachments/assets/d6cb8ab6-a714-4a76-a25f-d8924c8044af)
+**Resultado:**
+<img width="1598" height="913" alt="image" src="https://github.com/user-attachments/assets/e1426c22-d395-4898-9e6f-3af43ba4f6bc" />
 
 
 **Paso 4:** Iniciar la aplicacion.
