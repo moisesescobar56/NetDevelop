@@ -8,10 +8,10 @@
 
 **Paso 2:** Dar doble clic sobre el botón **"eliminarButton"**, para generar el **evento click**. 
 
-![image](https://github.com/user-attachments/assets/bf32405d-31f9-4c0d-bfea-685d9b6e3383)
+<img width="1598" height="913" alt="image" src="https://github.com/user-attachments/assets/bf7f163b-5726-440b-93c3-3d447ad6a10d" />
 
 **Resultado:**
-![image](https://github.com/user-attachments/assets/a9145938-5210-4f59-beb2-b17034146953)
+<img width="1239" height="718" alt="image" src="https://github.com/user-attachments/assets/f910d7da-4b46-4857-8602-6eeb64486fe3" />
 
 
 **Paso 3:** Agregar lógica del botón **ELIMINAR**, en el evento **eliminarButton_Click**. La siguiente lógica es para validar que se haya seleccionado un registro antes de eliminarlo y confirmar si **“¿Desea eliminar el registro seleccionado?”**.
@@ -30,7 +30,8 @@ else
     MessageBox.Show("Primero debe seleccionar el registro que desea eliminar", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
 }
 ```
-![image](https://github.com/user-attachments/assets/8e5004dd-adce-47ff-9474-587543c1074b)
+**Resultado:**
+<img width="1616" height="902" alt="image" src="https://github.com/user-attachments/assets/42a162ce-89ab-4063-a124-9e960d9f08bf" />
 
 **Paso 4:** Agregar la lógica para eliminar el registro seleccionado. 
 ```csharp
@@ -48,7 +49,7 @@ else
     MessageBox.Show("Ocurrio un error, por favor intente de nuevo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 }
 ```
-![image](https://github.com/user-attachments/assets/ef89ba84-d71f-4e21-bf0e-3f52f63bf2f8)
+![Uploading image.png…]()
 
 **Paso 5:** Iniciar la aplicacion.
 ![image](https://github.com/user-attachments/assets/c44bad4d-30e8-452e-bc00-594b96ab4a43)
