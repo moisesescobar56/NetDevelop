@@ -4,7 +4,7 @@
 ## PARTE 1 - Programación de Accion ELIMINAR
 **Paso 1:** Ir al **Explorador de soluciones** y dar doble clic sobre el archivo **“AdminEmpleadoForm.cs”**. 
 
-![image](https://github.com/user-attachments/assets/2a555a96-267d-481c-856a-91c636083c0c)
+<img width="1378" height="881" alt="image" src="https://github.com/user-attachments/assets/70c8db75-bda9-46a4-8743-8efc9e9afbf5" />
 
 **Paso 2:** Dar doble clic sobre el botón **"eliminarButton"**, para generar el **evento click**. 
 
