@@ -4,7 +4,7 @@
 
 **Paso 1:** Abrir el formulario "AdminEmpleadoForm.cs".
 
-<img width="1378" height="808" alt="image" src="https://github.com/user-attachments/assets/f17099fe-b203-4fdc-a3af-b6d00fb62637" />
+<img width="1378" height="881" alt="image" src="https://github.com/user-attachments/assets/70c8db75-bda9-46a4-8743-8efc9e9afbf5" />
 
 **Paso 2:** Seleccionar el formulario y en la ventana de Propiedades dar clic sobre el menú de **Eventos**. 
 
